@@ -50,10 +50,10 @@ const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="bg-cover bg-center py-20 relative bg-[#0ea5e9] dark:bg-[#1f2938]"
+      className="bg-cover bg-center py-20 relative bg-[#0da7ec26] dark:bg-[#1f2938]"
     >
       <div className="text-center mb-10">
-        <p className="text-4xl mb-12 font-bold text-white mt-4">We are here to provide value and make an impact.</p>
+        <p className="text-4xl mb-12 font-bold text-[#1e2939] dark:text-whitemt-4">We are here to provide value and make an impact.</p>
       </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -65,8 +65,8 @@ const FeaturesSection = () => {
                 className="features-item cursor-pointer opacity-100 transition-opacity duration-200 hover:opacity-70"
                 onClick={() => handleFeatureClick(feature.imageUrl)}
               >
-                <h3 className="text-xl font-bold text-white">{feature.title}</h3>
-                <p className="text-lg text-white mt-3">{feature.description}</p>
+                <h3 className="text-xl font-bold text-[#1e2939] dark:text-white">{feature.title}</h3>
+                <p className="text-lg text-[#1e2939] dark:text-white mt-3">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -90,8 +90,8 @@ const FeaturesSection = () => {
                 className="features-item cursor-pointer opacity-100 transition-opacity duration-200 hover:opacity-70"
                 onClick={() => handleFeatureClick(feature.imageUrl)}
               >
-                <h3 className="text-xl font-bold text-white">{feature.title}</h3>
-                <p className="text-lg text-white mt-3">{feature.description}</p>
+                <h3 className="text-xl font-bold text-[#1e2939] dark:text-white">{feature.title}</h3>
+                <p className="text-lg text-[#1e2939] dark:text-white mt-3">{feature.description}</p>
               </div>
             ))}
           </div>

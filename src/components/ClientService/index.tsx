@@ -68,8 +68,8 @@ const CreativeCards = () => {
               className="card-column w-full sm:w-1/2 lg:w-1/3 p-4"
             >
               <div className="card-details before:bg-[#f7f6f2] dark:before:bg-[#000] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
-                <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0ea5e9]">
-                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#0ea5e9] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
+                <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#0185c7] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
                   <img
                     className="light-icon relative w-16 h-16"
                     src={card.imageUrl}

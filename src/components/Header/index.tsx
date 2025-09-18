@@ -20,11 +20,11 @@ const Header = () => {
 
         {/* Navigation (Desktop) */}
         <nav className="hidden md:flex space-x-6 items-center">
-          <a href="/services" className="text-lg hover:text-[#0ea5e9]">Services</a>
-          <a href="/about" className="text-lg hover:text-[#0ea5e9]">About Us</a>
-          <a href="/contactUs" className="text-lg hover:text-[#0ea5e9]">Contact Us</a>
+          <a href="/services" className="text-lg hover:text-[#0185c7]">Services</a>
+          <a href="/about" className="text-lg hover:text-[#0185c7]">About Us</a>
+          <a href="/contactUs" className="text-lg hover:text-[#0185c7]">Contact Us</a>
           <ThemeToggle />
-          <a href="#get-started" className="text-lg px-4 py-2 bg-[#0ea5e9] font-semibold text-[#ffffff] rounded-lg">Get Started</a>
+          <a href="#get-started" className="text-lg px-4 py-2 bg-[#0185c7] uppercase font-semibold text-[#ffffff] rounded-lg">Get Started</a>
         </nav>
 
         {/* Mobile Menu Icon */}
@@ -51,10 +51,10 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col items-center space-y-6 mt-10">
-          <a href="#services" className="text-lg hover:text-[#0ea5e9]">Services</a>
-          <a href="#about" className="text-lg hover:text-[#0ea5e9]">About Us</a>
-          <a href="#contact" className="text-lg hover:text-[#0ea5e9]">Contact Us</a>
-          <a href="#get-started" className="text-lg px-4 py-2 bg-[#0ea5e9] text-[#ffffff] rounded-full">Get Started</a>
+          <a href="#services" className="text-lg hover:text-[#0185c7]">Services</a>
+          <a href="#about" className="text-lg hover:text-[#0185c7]">About Us</a>
+          <a href="#contact" className="text-lg hover:text-[#0185c7]">Contact Us</a>
+          <a href="#get-started" className="text-lg px-4 py-2 bg-[#0185c7] text-[#ffffff] rounded-full">Get Started</a>
         </nav>
       </div>
     </header>

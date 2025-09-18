@@ -81,7 +81,7 @@ const defaultLegalLinks = [
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
-    <section className="py-32 bg-[#0da5ea] dark:bg-[#1f2939]">
+    <section className="py-32 bg-[#d5eefa] dark:bg-[#1f2939]">
       <div className="container mx-auto">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
@@ -95,12 +95,12 @@ const defaultLegalLinks = [
                   className="h-8"
                 />
               </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+              <h2 className="text-xl font-semibold dark:text-white">{logo.title}</h2>
             </div>
-            <p className="max-w-[70%] text-sm text-white">
+            <p className="max-w-[70%] text-sm text-[#1e2939] dark:text-white">
               {description}
             </p>
-            <ul className="flex items-center space-x-6 text-white">
+            <ul className="flex items-center space-x-6 text-[#1e2939] dark:text-white">
               {socialLinks.map((social, idx) => (
                 <li key={idx} className="font-medium hover:text-primary">
                   <a href={social.href} aria-label={social.label}>
@@ -114,7 +114,7 @@ const defaultLegalLinks = [
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-3 text-sm text-white">
+                <ul className="space-y-3 text-sm text-[#1e2939] dark:text-white">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
@@ -129,11 +129,11 @@ const defaultLegalLinks = [
           </div>
         </div>
         <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium text-white md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
+          <p className="order-2 lg:order-1 text-[#1e2939] dark:text-white">{copyright}</p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
+              <li key={idx} className="hover:text-primary text-[#1e2939] dark:text-white">
+                <a href={link.href} > {link.name}</a>
               </li>
             ))}
           </ul>

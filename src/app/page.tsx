@@ -5,7 +5,8 @@ import CurrentWay from '@/components/CurrentWay/index'
 import {GradientCardDemo} from '@/components/GrippInvesment/index'
 import FocusCards, { cards } from '@/components/Gallary';
 import AboutOwner from '@/components/AboutOwner'
-// import ContactForm from '@/components/ContactUs'
+import Faq from '@/components/Faq'
+import ContactUsHeroSection from '@/components/ContactUsHeroSection'
 
 
 export default function Home() {
@@ -17,7 +18,9 @@ export default function Home() {
   <GradientCardDemo />
   <FocusCards cards={cards} />
   <AboutOwner />
-  {/* <ContactForm /> */}
+    <ContactUsHeroSection />
+  <Faq />
+
   </>
   );
 }

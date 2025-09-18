@@ -1,10 +1,14 @@
 import React from 'react';
+import ContactUsHeroSection from '@/components/ContactUsHeroSection'
+import OurOffices from '@/components/OurOffices'
+import RequestDemo from '@/components/RequestDemo'
 
 const Contact = () => {
   return (
     <div>
-      <h1>Contact Us</h1>
-      <p>Contact information.</p>
+      <ContactUsHeroSection />
+      <OurOffices />
+      <RequestDemo />
     </div>
   );
 };
