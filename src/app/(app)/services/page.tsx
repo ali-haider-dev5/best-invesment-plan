@@ -7,7 +7,7 @@ const ServicesHero = () => {
     <div className="bg-[#0da7ec26] dark:bg-[#1f2938] py-[220px] flex items-center justify-center">
       <div className="text-center max-w-4xl mx-auto">
         <h1 className="text-4xl dark:text-white sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-          Our Services For All user
+          Our Services For All users
         </h1>
         <p className="mt-4 text-lg dark:text-white sm:text-xl text-gray-800 max-w-2xl mx-auto">
           We offer a comprehensive suite of services designed to help you achieve your business goals and drive measurable growth.
