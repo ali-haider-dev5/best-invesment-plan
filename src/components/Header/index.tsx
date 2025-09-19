@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ThemeToggle from '@/components/theme-toggle';
+import Link from 'next/link'
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,10 +19,10 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
-          <a href="/" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f]  hover:text-[#f3a84f]">Home</a>
-          <a href="/services" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f]  hover:text-[#f3a84f]">Services</a>
-          <a href="/about" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f] hover:text-[#f3a84f]">About Us</a>
-          <a href="/contactus" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f] hover:text-[#f3a84f]">Contact Us</a>
+          <Link href="/" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f]  hover:text-[#f3a84f]">Home</Link>
+          <Link href="/services" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f]  hover:text-[#f3a84f]">Services</Link>
+          <Link href="/about" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f] hover:text-[#f3a84f]">About Us</Link>
+          <Link href="/contactus" className="text-[#f3a84f] dark:text-white font-semibold uppercase dark:hover:text-[#f3a84f] hover:text-[#f3a84f]">Contact Us</Link>
           <ThemeToggle />
           <a
             href="#get-started"
@@ -52,15 +53,15 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col items-center space-y-6 mt-10">
-          <a href="#services" className="text-[#f3a84f] hover:text-[#f3a84f]">Services</a>
-          <a href="#about" className="text-[#f3a84f] hover:text-[#f3a84f]">About Us</a>
-          <a href="#contact" className="text-[#f3a84f] hover:text-[#f3a84f">Contact Us</a>
-          <a
+          <Link href="#services" className="text-[#f3a84f] hover:text-[#f3a84f]">Services</Link>
+          <Link href="#about" className="text-[#f3a84f] hover:text-[#f3a84f]">About Us</Link>
+          <Link href="#contact" className="text-[#f3a84f] hover:text-[#f3a84f]">Contact Us</Link>
+          <Link
             href="#get-started"
             className="text-[#FFFFFF] px-4 py-2 bg-[#f3a84f] rounded-full hover:bg-[#f3a84f]"
           >
             Get Started
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
