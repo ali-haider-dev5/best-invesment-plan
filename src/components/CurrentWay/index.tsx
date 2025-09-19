@@ -53,7 +53,7 @@ const FeaturesSection = () => {
       className="bg-cover bg-center py-20 relative bg-[#0da7ec26] dark:bg-[#1f2938]"
     >
       <div className="text-center mb-10">
-        <p className="text-4xl mb-12 font-bold text-[#1e2939] dark:text-whitemt-4">We are here to provide value and make an impact.</p>
+        <p className="text-4xl mb-12 font-bold dark:text-white text-[#1e2939] dark:text-whitemt-4">We are here to provide value and make an impact.</p>
       </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

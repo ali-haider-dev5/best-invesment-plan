@@ -31,22 +31,22 @@ const HeroSection = () => {
     <div className="min-h-screen w-screen bg-gradient-to-br dark:bg-[#1f2937] bg-[#0da7ec26]  text-white flex flex-col items-center justify-center p-8">
       <div className="w-full max-w-6xl space-y-12 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
-          <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 b border border-[#0185c7] text-[#1e2939] hover:bg-white/20 px-4 py-2 rounded-full">
+          <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 dark:text-white b border border-[#0185c7] text-[#1e2939] hover:bg-white/20 px-4 py-2 rounded-full">
             ✨ Next Generation Tools
           </Badge>
           
           <div className="space-y-6 flex items-center justify-center flex-col ">
-            <h1 className="text-3xl md:text-6xl text-[#1e2939] font-semibold tracking-tight max-w-3xl">
+            <h1 className="text-3xl md:text-6xl text-[#1e2939] dark:text-white font-semibold tracking-tight max-w-3xl">
               Discover minimalism and power in one place
             </h1>
-            <p className="text-lg text-[#1e2939]  max-w-2xl">
+            <p className="text-lg text-[#1e2939] dark:text-white  max-w-2xl">
               Designed with aesthetics and performance in mind. Experience ultra-fast processing, advanced security, and intuitive design.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <Button className="text-sm px-8 py-3 rounded-xl bg-[var(--brand)] text-[#1e2939] border border-[#0185c7]  shadow-none hover:bg-[var(--brand-dark)] transition-all">
+              <Button className="text-sm px-8 py-3 rounded-xl dark:text-white bg-[var(--brand)] text-[#1e2939] border border-[#0185c7]  shadow-none hover:bg-[var(--brand-dark)] transition-all">
                 Get Started
               </Button>
-              <Button className="text-sm px-8 py-3 rounded-xl bg-transparent text-[#1e2939] border border-[#0185c7] shadow-none hover:bg-white/10 transition-all">
+              <Button className="text-sm px-8 py-3 rounded-xl bg-transparent dark:text-white text-[#1e2939] border border-[#0185c7] shadow-none hover:bg-white/10 transition-all">
                 Learn More
               </Button>
             </div>
