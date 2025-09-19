@@ -62,7 +62,7 @@ function FaqRow({
   const buttonId = `faq-button-${index}`;
 
   return (
-    <div className="mb-4 rounded-md border border-[#0da5ea] bg-[#f0f9ff] p-4 dark:border-neutral-800">
+    <div className="mb-4 rounded-md border border-[#0da5ea] dark:bg-[#1e2838] bg-[#f0f9ff] p-4 dark:border-neutral-800">
       <button
         type="button"
         id={buttonId}
