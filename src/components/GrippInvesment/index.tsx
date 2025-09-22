@@ -20,7 +20,7 @@ const cardContents: { id: number; title: string; description: string }[] = [
 export function GradientCardDemo() {
   return (
     <div className=" dark:bg-[#1a2333] ">
-      <div className="container text-center py-12 mx-auto sm:flex-row gap-6">
+      <div className="max-w-7xl w-full text-center py-12 mx-auto sm:flex-row gap-6">
         <div className="mb-12">
           <h1 className="text-5xl text-[#f4a950] dark:text-[#f4a950] font-semibold mb-2">
             Putting a GRIPP on Investments

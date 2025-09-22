@@ -21,7 +21,7 @@ const Header = () => {
     className?: string;
     onClick?: () => void;
   }) {
-    const rawPathname = usePathname() ?? ''; // handle possible null
+    const rawPathname = usePathname() ?? '';
     const normalize = (s: string) => s.replace(/\/+$/, '');
     const isActive = normalize(rawPathname) === normalize(href);
 
@@ -46,12 +46,10 @@ const Header = () => {
   return (
     <header className="bg-[#FFFFFF] fixed top-0 left-0 w-full dark:bg-[#0f131b] text-[#333333] dark:text-[#f5f5f5] z-50 py-5 shadow-md border-b border-[#DDDDDD]">
       <div className="container mx-auto flex justify-between items-center px-4">
-        {/* Logo */}
         <div className="flex items-center space-x-4">
           <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo" className="w-32" />
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
           <ActiveLink href="/">Home</ActiveLink>
           <ActiveLink href="/services">Services</ActiveLink>
@@ -65,8 +63,6 @@ const Header = () => {
             Get Started
           </a>
         </nav>
-
-        {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -79,7 +75,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={cn(
           'md:hidden fixed top-0 left-0 w-full h-screen z-50 transform transition-transform duration-300',

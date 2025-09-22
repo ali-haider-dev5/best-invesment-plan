@@ -72,7 +72,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f4f4] dark:bg-[#1a2334] text-white p-4 sm:p-8 md:p-16 flex flex-col items-center justify-center">
+    <div className="bg-[#f4f4f4] dark:bg-[#1a2334] text-white p-4 sm:p-8 md:p-16 flex flex-col items-center ">
       <div className="rounded-2xl max-w-7xl w-full flex flex-col lg:flex-row">
         <div className="p-8 md:p-12 lg:w-1/2 flex flex-col">
           <p className="text-[#555555] dark:text-white font-medium">Contact</p>

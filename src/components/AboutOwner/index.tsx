@@ -5,12 +5,13 @@ const App = () => {
   return (
     <div className='dark:bg-[#1a2333]'>
     <div className="container mx-auto py-12">
-      <h1 className="text-6xl text-[#f3a84f] text-center mb-24 font-bold ">About Mazco</h1>
+     
       <div className=" flex p-4 justify-center">
-        <div className="testimonial-container max-w-5xl w-full md:flex md:space-x-8 items-start">
-          {/* Testimonial Quote and Info Card */}
+        <div className="testimonial-container max-w-7xl w-full  md:space-x-8 items-start">
+           <h1 className="text-6xl text-[#f3a84f] text-left mb-24 font-bold ">About Mazco</h1>
+          <div className='flex gap-4'>
           <div className="relative   rounded-lg flex-1 md:mb-0 mb-8">
-            <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-8 md:p-12 rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
+            <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-8 md:p-16 rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
               <blockquote className="relative z-10 text-xl md:text-2xl font-medium text-[#555555] dark:text-white leading-snug">
                 I need a platform that lets me rapidly transform, and iterate on
                 our data for strategy and process improvement. Mode does just
@@ -39,7 +40,7 @@ const App = () => {
                   </svg>
                 </div>
               </div>
-              <div className="flex flex-col bg-[#f4f4f4]  dark:bg-[#0f131b] w-full rounded-bl-lg rounded-br-lg  border-t-0 p-4">
+              <div className="flex flex-col bg-[#f4f4f4]  dark:bg-[#0f131b] w-full rounded-bl-lg rounded-br-lg  border-t-0 p-6">
                 <span className="text-lg text-[#1e2939] dark:text-white">Alex S.</span>
                 <span className="text-sm font-medium text-[#1e2939] dark:text-white">
                   Business Intelligence Manager
@@ -64,6 +65,7 @@ const App = () => {
               alt="Alex S."
               className="rounded-lg w-full h-full object-cover shadow-lg"
             />
+          </div>
           </div>
         </div>
       </div>

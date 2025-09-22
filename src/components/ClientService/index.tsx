@@ -55,19 +55,50 @@ const cardData = [
 
 const CreativeCards = () => {
   return (
-    <section className="creative-cards py-24   relative dark:bg-[#1a2333]">
+    <section className="creative-cards py-24   relative dark:bg-[#1a2333f0]">
       <div className="text-center">
-        <h1 className="font-semibold dark:text-white text-6xl mb-2">Client Service Menu</h1>
+        <h1 className="font-semibold  dark:text-[#f3a84f] text-6xl mb-2">Client Service Menu</h1>
         <p className="">We are here to provide value and make an impact.</p>
       </div>
       <div className="container mx-auto px-4 mt-8">
         <div className="flex flex-wrap">
-          {cardData.map((card) => (
+          {cardData.slice(0,3).map((card) => (
             <div
               key={card.id}
               className="card-column w-full sm:w-1/2 lg:w-1/3 p-4"
             >
-              <div className="card-details before:bg-[#f4f4f4] dark:before:bg-[#000] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
+              <div className="card-details before:bg-[#f4f4f4] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
+                <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#f3a84f] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
+                  <img
+                    className="light-icon relative w-16 h-16"
+                    src={card.imageUrl}
+                    alt={`${card.title} Icon`}
+                  />
+                </div>
+                <h3 className="mt-12 mb-4 text-2xl font-bold text-center">
+                  <a href={card.link} className="text-[#333333] no-underline dark:text-white">
+                    {card.title}
+                  </a>
+                </h3>
+                <p className="text-md dark:text-white text-[#55555] mb-8 font-normal leading-[30px] text-center">
+                  {card.description}
+                </p>
+                <a
+                  className="read-more-btn flex justify-center items-center w-12 h-12 border-2 border-yellow-200 rounded-full bg-white opacity-0 group-hover:opacity-100 transform group-hover:translate-x-2 transition-all duration-300"
+                  href={card.link}
+                >
+                  <ChevronsRight className='dark:text-black' />
+                </a>
+              </div>
+            </div>
+          ))}
+            {cardData.slice(3,6).map((card,index) => (
+            <div
+              key={card.id}
+              className={`${index === 0 ? "-ml-[165px]" : "" } card-column w-full sm:w-1/2 lg:w-1/3 p-4`}
+            >
+              <div className="card-details before:bg-[#f4f4f4] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
                 <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
                   <div className="absolute top-0 left-0 w-full h-full border-2 border-[#f3a84f] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
                   <img
@@ -114,9 +145,9 @@ const CreativeCards = () => {
           background-color: #f4a95061;
         } 
 
-        /* Dark mode style */
+
         .dark .card-details::before {
-          background: #333!important; /* Dark mode background */
+          background: #333!important;
         }
         .card-icons:before {
           content: "";

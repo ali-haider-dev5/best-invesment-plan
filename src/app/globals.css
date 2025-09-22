@@ -134,5 +134,9 @@ body{
   display: none;
 }
 
+.inner-none .p-6:not(.px-0) {
+  display: none;
+}
+
 
 
