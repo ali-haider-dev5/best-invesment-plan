@@ -81,7 +81,7 @@ const defaultLegalLinks = [
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
-    <section className="py-32 bg-[#d5eefa] dark:bg-[#1f2939]">
+    <section className="py-32 bg-[#f4f4f4] dark:bg-[#0f131b]">
       <div className="container mx-auto">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
@@ -97,12 +97,12 @@ const defaultLegalLinks = [
               </a>
               <h2 className="text-xl font-semibold dark:text-white">{logo.title}</h2>
             </div>
-            <p className="max-w-[70%] text-sm text-[#1e2939] dark:text-white">
+            <p className="max-w-[70%] text-sm text-[#555555] dark:text-white">
               {description}
             </p>
             <ul className="flex items-center space-x-6 text-[#1e2939] dark:text-white">
               {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium hover:text-primary">
+                <li key={idx} className="font-medium text-[#555555] hover:text-primary">
                   <a href={social.href} aria-label={social.label}>
                     {social.icon}
                   </a>
@@ -113,8 +113,8 @@ const defaultLegalLinks = [
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-3 text-sm text-[#1e2939] dark:text-white">
+                <h3 className="mb-4 font-bold text-[#f4a950]">{section.title}</h3>
+                <ul className="space-y-3 text-sm text-[#555555] dark:text-white">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
@@ -129,7 +129,7 @@ const defaultLegalLinks = [
           </div>
         </div>
         <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium text-white md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1 text-[#1e2939] dark:text-white">{copyright}</p>
+          <p className="order-2 lg:order-1 text-[#555555] dark:text-white">{copyright}</p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary text-[#1e2939] dark:text-white">

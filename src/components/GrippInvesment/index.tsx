@@ -19,13 +19,13 @@ const cardContents: { id: number; title: string; description: string }[] = [
 
 export function GradientCardDemo() {
   return (
-    <div className="dark:bg-[#1f2938]">
+    <div className=" dark:bg-[#1a2333] ">
       <div className="container text-center py-12 mx-auto sm:flex-row gap-6">
         <div className="mb-12">
-          <h1 className="text-5xl font-semibold mb-2">
+          <h1 className="text-5xl text-[#f4a950] dark:text-[#f4a950] font-semibold mb-2">
             Putting a GRIPP on Investments
           </h1>
-          <p className="text-[24px]">
+          <p className="text-[20px] mt-4 dark:text-white text-[#333333]">
             Fixed Indexed Annuity concepts summarized.
           </p>
         </div>

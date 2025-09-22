@@ -28,7 +28,7 @@ const features = [
 
 const HeroSection = () => {
   return (
-<div className="min-h-[75vh] w-screen bg-[#313131] dark:bg-[#1a2332] bg-cover bg-center bg-blend-overlay text-white flex flex-col items-center justify-center p-8">
+<div className="min-h-[795px] w-screen bg-[#313131] dark:bg-[#0f131b] bg-cover bg-center bg-blend-overlay text-white flex flex-col items-center justify-center p-8">
       <div className="w-full relative max-w-6xl space-y-12 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
           <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 dark:text-white b border border-[#f3a84f] text-white hover:bg-white/20 px-4 py-2 rounded-full">

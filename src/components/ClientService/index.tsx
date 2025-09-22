@@ -55,7 +55,7 @@ const cardData = [
 
 const CreativeCards = () => {
   return (
-    <section className="creative-cards py-24 relative dark:bg-[#1f293875]">
+    <section className="creative-cards py-24   relative dark:bg-[#1a2333]">
       <div className="text-center">
         <h1 className="font-semibold dark:text-white text-6xl mb-2">Client Service Menu</h1>
         <p className="">We are here to provide value and make an impact.</p>
@@ -67,9 +67,9 @@ const CreativeCards = () => {
               key={card.id}
               className="card-column w-full sm:w-1/2 lg:w-1/3 p-4"
             >
-              <div className="card-details before:bg-[#f7f6f2] dark:before:bg-[#000] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
+              <div className="card-details before:bg-[#f4f4f4] dark:before:bg-[#000] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
                 <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
-                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#0185c7] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#f3a84f] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
                   <img
                     className="light-icon relative w-16 h-16"
                     src={card.imageUrl}
@@ -77,11 +77,11 @@ const CreativeCards = () => {
                   />
                 </div>
                 <h3 className="mt-12 mb-4 text-2xl font-bold text-center">
-                  <a href={card.link} className="text-black no-underline dark:text-white">
+                  <a href={card.link} className="text-[#333333] no-underline dark:text-white">
                     {card.title}
                   </a>
                 </h3>
-                <p className="text-md dark:text-white text-gray-600 mb-8 font-normal leading-[30px] text-center">
+                <p className="text-md dark:text-white text-[#55555] mb-8 font-normal leading-[30px] text-center">
                   {card.description}
                 </p>
                 <a
@@ -111,7 +111,7 @@ const CreativeCards = () => {
           transition: 0.3s ease-in-out;
         }
         .card-details:hover:before {
-          background-color: #0da5ea52;
+          background-color: #f4a95061;
         } 
 
         /* Dark mode style */
@@ -132,7 +132,7 @@ const CreativeCards = () => {
           transition: 0.3s ease-in-out;
         }
         .card-details:hover .card-icons:before {
-          background-color: #0da5ea;
+          background-color: #f3a84f;
         }
         .read-more-btn {
           width: 50px;
@@ -147,7 +147,7 @@ const CreativeCards = () => {
           transform: translateX(-10px);
           opacity: 0;
           visibility: hidden;
-          border-color: #0da5ea;
+          border-color: #f3a84f;
           transition: 0.3s ease-in-out;
           text-decoration: none;
         }

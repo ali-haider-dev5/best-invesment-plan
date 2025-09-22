@@ -1,104 +1,121 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 
+// SVG Icons for the features
+const IconPowerfulAutomation = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+const IconUnlimitedScale = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+const IconConsistentCX = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+const IconRichData = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+const IconAgileExcellence = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+const IconSecureReliability = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#f3a84f]">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-8h2v2h-2v-2zm-2-2h6v-2h-6v2zm4 4h-4v2h4v-2zm-6 2h10v-2h-10v2z" />
+    </svg>
+);
+
+// Updated features data with icon components
 const featuresData = [
-  {
-    id: 1,
-    title: "Feature 1",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-1.png"
-  },
-  {
-    id: 2,
-    title: "Feature 2",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-2.png"
-  },
-  {
-    id: 3,
-    title: "Feature 3",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-3.png"
-  },
-  {
-    id: 4,
-    title: "Feature 4",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-4.png"
-  },
-  {
-    id: 5,
-    title: "Feature 5",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-5.png"
-  },
-  {
-    id: 6,
-    title: "Feature 6",
-    description: "I don’t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.",
-    imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/phone-6.png"
-  },
+    {
+        id: 1,
+        title: "Powerful automation",
+        description: "Fully automate your most challenging support conversations to reduce costs, increase capacity, and deliver superior on-brand experiences to your customers.",
+        icon: <IconPowerfulAutomation />,
+    },
+    {
+        id: 2,
+        title: "Unlimited scale",
+        description: "Deploy industry-leading AI to handle enterprise-scale conversation volumes and engage customers instantly – in 45 languages and counting.",
+        icon: <IconUnlimitedScale />,
+    },
+    {
+        id: 3,
+        title: "Consistent CX",
+        description: "Build loyalty, drive revenue, and stand out from the crowd by delivering consistent, connected conversational experiences across voice, chat, SMS, and beyond.",
+        icon: <IconConsistentCX />,
+    },
+    {
+        id: 4,
+        title: "Rich data",
+        description: "Use AI to analyze every call as it happens and surface actionable data for operational improvements and discovering new opportunities.",
+        icon: <IconRichData />,
+    },
+    {
+        id: 5,
+        title: "Agile excellence",
+        description: "Adapt and refine your CX strategy faster than ever before with a user-friendly platform for creating rich, responsive conversational journeys.",
+        icon: <IconAgileExcellence />,
+    },
+    {
+        id: 6,
+        title: "Secure reliability",
+        description: "Automate with confidence thanks to the most advanced AI guardrails and data security protections to ensure that your agents always perform as expected.",
+        icon: <IconSecureReliability />,
+    },
 ];
 
 const FeaturesSection = () => {
-  const [activeImage, setActiveImage] = useState<string>(featuresData[0].imageUrl);
+    return (
+        <section
+            id="features"
+            className="bg-[#f4f4f4] dark:bg-[#1a2334] text-white py-20 relative font-sans"
+        >
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start">
+                {/* Left Side: Text and Features */}
+                <div className="w-full lg:w-1/2 flex flex-col px-4">
+                    <h2 className="text-4xl lg:text-5xl text-[#f3a84f] font-bold mb-12 text-left leading-tight">
+                        Earn trust from the first word.
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-12">
+                        {featuresData.map((feature) => (
+                            <div key={feature.id} className="features-item">
+                                <div className="mb-2 text-[#f3a84f]">{feature.icon}</div>
+                                <h3 className="text-xl text-[#f3a84f] font-bold mb-2">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-sm text-[#555555] dark:text-white font-light leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
-  const handleFeatureClick = (imageUrl: string) => {
-    setActiveImage(imageUrl);
-  };
-
-  return (
-    <section
-      id="features"
-      className="bg-cover bg-center py-20 relative bg-[#0da7ec26] dark:bg-[#1f2938]"
-    >
-      <div className="text-center mb-10">
-        <p className="text-4xl mb-12 font-bold dark:text-white text-[#1e2939] dark:text-whitemt-4">We are here to provide value and make an impact.</p>
-      </div>
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Left Side Features */}
-          <div className="features-list w-full flex flex-col gap-8 mb-8 sm:mb-0">
-            {featuresData.slice(0, 3).map((feature) => (
-              <div
-                key={feature.id}
-                className="features-item cursor-pointer opacity-100 transition-opacity duration-200 hover:opacity-70"
-                onClick={() => handleFeatureClick(feature.imageUrl)}
-              >
-                <h3 className="text-xl font-bold text-[#1e2939] dark:text-white">{feature.title}</h3>
-                <p className="text-lg text-[#1e2939] dark:text-white mt-3">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Features Image */}
-          <div className="features-image w-full  text-center mb-8 sm:mb-0">
-            <img
-              src={activeImage}
-              height={400}
-              width={300}
-              alt="Feature Image"
-              className="w-full h-auto filter drop-shadow-xl"
-            />
-          </div>
-
-          {/* Right Side Features */}
-          <div className="features-list w-full flex flex-col gap-8 mb-8 sm:mb-0">
-            {featuresData.slice(3, 6).map((feature) => (
-              <div
-                key={feature.id}
-                className="features-item cursor-pointer opacity-100 transition-opacity duration-200 hover:opacity-70"
-                onClick={() => handleFeatureClick(feature.imageUrl)}
-              >
-                <h3 className="text-xl font-bold text-[#1e2939] dark:text-white">{feature.title}</h3>
-                <p className="text-lg text-[#1e2939] dark:text-white mt-3">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                {/* Right Side: Image */}
+                <div className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0 lg:pl-8">
+                    <img
+                        src="/path/to/your/image_236752.jpg"
+                        alt="A person using a phone"
+                        className="w-full h-auto object-cover max-w-2xl rounded-lg"
+                    />
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default FeaturesSection;

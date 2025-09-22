@@ -29,7 +29,6 @@ const ContactUs = () => {
     }
   };
 
-  // Typing for handleSubmit
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form Submitted:', formData);
@@ -37,7 +36,7 @@ const ContactUs = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className="w-full bg-[#0da7ec] text-white text-center py-12 mb-6 rounded-t-lg">
+      <div className="w-full bg-[#f4f4f4] text-white text-center py-12 mb-6 rounded-t-lg">
         <h1 className="text-3xl font-semibold">Get In Touch</h1>
         <p className="text-xl mt-2">Let’s Talk!</p>
       </div>
@@ -51,7 +50,7 @@ const ContactUs = () => {
               placeholder="First Name"
               value={formData.firstName}
               onChange={handleChange}
-              className="p-3 border border-gray-300 rounded-lg"
+              className="p-3 border  border-gray-300 rounded-lg"
             />
             <input
               type="text"

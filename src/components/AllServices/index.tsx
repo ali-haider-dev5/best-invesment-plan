@@ -68,21 +68,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image }) 
 
   return (
     <div
-      className="relative  bg-white dark:bg-[#283445] rounded-lg shadow-md overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl cursor-pointer"
+      className="relative  bg-white dark:bg-[#0f131b] rounded-lg shadow-md overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-6">
-        <h3 className="text-lg font-bold text-[#1f2937] dark:text-white">{title}</h3>
-        <p className="mt-2 text-sm text-[#475569] dark:text-white">{description}</p>
+        <h3 className="text-lg font-bold text-[#f4a950]">{title}</h3>
+        <p className="mt-2 text-sm text-[#555555] dark:text-white">{description}</p>
       </div>
       <div
         className={`absolute inset-0 bg-[#ffffffb8] dark:bg-[#293446c2] bg-opacity-90 flex items-center justify-center p-6 transition-opacity duration-300 ease-in-out ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <button className="px-6 py-3 bg-[#0ea5e9] text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-90 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+        <button className="px-6 py-3 bg-[#f4a950] text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-90 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
           Take this service
         </button>
       </div>
@@ -92,9 +92,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image }) 
 
 const App: React.FC = () => {
   return (
-    <div className="bg-gray-50 dark:bg-[#344256] py-16 px-4 sm:px-8">
+    <div className="bg-gray-50 dark:bg-[#1a2332] py-16 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-[#475569] text-center mb-12 uppercase">Our Services</h2>
+        <h2 className="text-4xl font-extrabold text-[#555555] dark:text-white text-center mb-12 uppercase">Our Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {serviceData.map((service, index) => (
             <ServiceCard key={index} {...service} />

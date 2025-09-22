@@ -27,7 +27,7 @@ const FocusCards = ({ cards }: { cards: { title: string; src: string }[] }) => {
         onMouseEnter={() => onHover(index)}
         onMouseLeave={() => onHover(null)}
         className={cn(
-          'rounded-lg relative dark:bg-[#1f2938] bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out',
+          'rounded-lg relative p-4 dark:bg-[#1f2938] bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out',
           isDimmed && 'blur-sm scale-[0.98]'
         )}
       >
@@ -45,7 +45,7 @@ const FocusCards = ({ cards }: { cards: { title: string; src: string }[] }) => {
             isActive ? 'opacity-100' : 'opacity-0'
           )}
         >
-          <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+          <div className="text-xl md:text-2xl font-medium bg-clip-text text-[#f3a84f] bg-gradient-to-b from-neutral-50 to-neutral-200">
             {card.title}
           </div>
         </div>
@@ -54,8 +54,8 @@ const FocusCards = ({ cards }: { cards: { title: string; src: string }[] }) => {
   };
 
   return (
-    <div className='dark:bg-[#1f2938]'>
-    <div className="grid  grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">
+    <div className='dark:bg-[#1a2333]'>
+    <div className="grid  grid-cols-1 p-4 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">
       {cards.map((card, index) => (
         <CardItem
           key={card.title}
