@@ -49,7 +49,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Link href="/">
-            <Image src="/mazo-logo.png" width={32} height={32} alt="Logo" className="w-32" />
+            <img src="/mazo-logo.png" alt="Logo" className="w-32" />
           </Link>
         </div>
 
