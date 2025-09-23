@@ -47,13 +47,13 @@ const Header = () => {
     <header className="bg-[#FFFFFF] fixed top-0 left-0 w-full dark:bg-[#0f131b] text-[#333333] dark:text-[#f5f5f5] z-50 py-5 shadow-md border-b border-[#DDDDDD]">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo" className="w-32" />
+          <img src="/mazo-logo.png" alt="Logo" className="w-32" />
         </div>
 
         <nav className="hidden md:flex space-x-6 items-center">
           <ActiveLink href="/">Home</ActiveLink>
           <ActiveLink href="/services">Services</ActiveLink>
-          <ActiveLink href="/about">About Us</ActiveLink>
+          <ActiveLink href="/aboutus">About Us</ActiveLink>
           <ActiveLink href="/contactus">Contact Us</ActiveLink>
           <ThemeToggle />
           <a

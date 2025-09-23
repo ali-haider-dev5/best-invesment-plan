@@ -1,10 +1,10 @@
 import React from 'react';
+import AboutUsHeroSection from '@/components/AboutUsHeroSection'
 
 const About = () => {
   return (
     <div>
-      <h1>About Us</h1>
-      <p>Details about the company.</p>
+      <AboutUsHeroSection />
     </div>
   );
 };
