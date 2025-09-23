@@ -31,7 +31,7 @@ function PlusToX({ open }: { open: boolean }) {
   return (
     <span
       aria-hidden
-      className="relative mr-4 inline-flex h-9 w-9 items-center justify-center rounded-full  ring-1 ring-[#f4a950]"
+      className="relative mr-4 inline-flex min-w-9 h-9 w-9 items-center justify-center rounded-full  ring-1 ring-[#f4a950]"
     >
       <motion.span
         className="absolute h-[2px] w-5 bg-[#f4a950]"
@@ -71,8 +71,8 @@ function FaqRow({
         className="group flex w-full items-center gap-2 py-3 text-left focus:outline-none"
         onClick={() => onToggle(index)}
       >
-        <PlusToX open={open} />
-        <span className="text-lg font-semibold leading-snug text-[#555555] dark:text-gray-100">
+        <PlusToX open={open}  />
+        <span className="lg:text-lg text-sm font-semibold leading-snug text-[#555555] dark:text-gray-100">
           {item.question}
         </span>
       </button>
@@ -99,7 +99,7 @@ function FaqRow({
               transition={{ duration: 0.2 }}
             >
               {typeof item.answer === "string" ? (
-                <p className="max-w-3xl leading-relaxed">{item.answer}</p>
+                <p className="max-w-3xl  leading-relaxed">{item.answer}</p>
               ) : (
                 item.answer
               )}
@@ -116,9 +116,9 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <div className='bg-white dark:bg-[#1a2334] py-12'>
+    <div className='bg-white dark:bg-[#1a2334] py-12 px-4 '>
     <div className="mx-auto  w-full max-w-7xl">
-      <h1 className="text-center mb-16 text-4xl text-[#f4a950] font-semibold sm:text-6xl">FAQs</h1>
+      <h1 className="text-center mb-8 lg:mb-16 text-3xl lg:text-4xl text-[#f4a950] font-semibold">FAQs</h1>
       <section className="bg-white  dark:bg-[#1a2334]">
         {items.map((item, i) => (
           <FaqRow

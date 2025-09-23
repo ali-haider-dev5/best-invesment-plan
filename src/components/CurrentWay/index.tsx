@@ -122,10 +122,8 @@ const FeaturesSection = () => {
       className="bg-[#f4f4f4] dark:bg-[#0f131b] text-white relative font-sans
              py-16 lg:py-0 lg:min-h-[720px]"
     >
-      <div
-        className="px-4 flex justify-between h-full gap-10 lg:gap-12"
-      >
-        <div className="flex flex-col justify-center pt-20 pr-20 pb-20 pl-[calc(50vw-635px)] ">
+      <div className="px-4 flex  justify-between h-full gap-10 lg:gap-12">
+        <div className="flex  flex-col justify-center pt-20 pr-0 lg:pr-20 pb-20 pl-[calc(50vw-635px)] ">
           <h2 className="text-4xl lg:text-5xl text-[#f3a84f] font-bold mb-8 leading-tight">
             Earn trust from the first word.
           </h2>
@@ -146,7 +144,7 @@ const FeaturesSection = () => {
 
         {/* Right: fills the rest (full height, full width) */}
         <div
-          className="relative w-full h-[320px] lg:h-auto lg:min-h-[720px] pr-[calc(50vw-635px)]"
+          className="relative hidden lg:block w-full h-[320px] lg:h-auto lg:min-h-[720px] pr-[calc(50vw-635px)]"
           style={{
             backgroundImage: "url('/texture-background.jpg')",
             backgroundSize: "cover",

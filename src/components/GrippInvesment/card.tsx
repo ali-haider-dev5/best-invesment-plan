@@ -86,7 +86,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           <div className="absolute inset-y-0 left-0 w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
           <div className="absolute inset-y-0 right-0 w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
           <div className="relative z-20 mx-auto py-8">
-            <CardContent className="px-0 sm:px-6 md:px-8">
+            <CardContent className="px-0 ml-2 sm:px-6 md:px-8">
               {title && (
                 <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-gray-100">
                   {title}

@@ -20,7 +20,7 @@ const cardContents: { id: number; title: string; description: string }[] = [
 export function GradientCardDemo() {
   return (
     <div className=" dark:bg-[#1a2333] ">
-      <div className="max-w-7xl w-full text-center py-12 mx-auto sm:flex-row gap-6">
+      <div className="max-w-7xl w-full text-center py-12 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h1 className="text-5xl text-[#f4a950] dark:text-[#f4a950] font-semibold mb-2">
             Putting a GRIPP on Investments
@@ -29,7 +29,7 @@ export function GradientCardDemo() {
             Fixed Indexed Annuity concepts summarized.
           </p>
         </div>
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center">
           {cardContents.map((content) => (
             <Card
               key={content.id}
@@ -37,10 +37,11 @@ export function GradientCardDemo() {
               id={content.id}  // Pass the id explicitly
               title={content.title}  // Pass the title
               description={content.description}  // Pass the description
-              className={cn(
-                "max-w-[400px] flex-1 px-8",
-                content.id === 1 ? "pr-0" : "",
-                content.id === 2 ? "pl-0" : ""
+               className={cn(
+                // full width on mobile; constrain and balance at larger sizes
+                "w-full sm:w-[48%] md:w-[45%] lg:w-[400px] max-w-[400px] flex-1 px-8",
+                content.id === 1 ? "sm:pr-0" : "",
+                content.id === 2 ? "sm:pl-0" : ""
               )}
             />
           ))}

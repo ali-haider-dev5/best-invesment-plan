@@ -55,9 +55,9 @@ const cardData = [
 
 const CreativeCards = () => {
   return (
-    <section className="creative-cards py-24   relative dark:bg-[#1a2333f0]">
+    <section className="creative-cards py-24   relative dark:bg-[#1a2333f0] px-4">
       <div className="text-center">
-        <h1 className="font-semibold  dark:text-[#f3a84f] text-6xl mb-2">Client Service Menu</h1>
+        <h1 className="font-bold  dark:text-[#f3a84f] text-4xl lg:text-6xl mb-2">Client Service Menu</h1>
         <p className="">We are here to provide value and make an impact.</p>
       </div>
       <div className="container mx-auto px-4 mt-8">
@@ -96,7 +96,7 @@ const CreativeCards = () => {
             {cardData.slice(3,6).map((card,index) => (
             <div
               key={card.id}
-              className={`${index === 0 ? "-ml-[165px]" : "" } card-column w-full sm:w-1/2 lg:w-1/3 p-4`}
+              className={`${index === 0 ? "" : "" } card-column w-full sm:w-1/2 lg:w-1/3 p-4`}
             >
               <div className="card-details before:bg-[#f4f4f4] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
                 <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">

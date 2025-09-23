@@ -64,7 +64,7 @@ const HeroSection = () => {
               <Card
                 key={idx}
                 variant="gradient"
-                className="flex flex-col items-start justify-start   rounded-xl inner-none"
+                className="flex flex-col items-start justify-start  rounded-xl inner-none"
               >
                 <feature.icon size={24} className="text-[#f3a84f] mb-2" />
                 <h3 className="text-sm font-semibold text-white">{feature.title}</h3>

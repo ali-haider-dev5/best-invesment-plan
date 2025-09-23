@@ -72,9 +72,9 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#f4f4f4] dark:bg-[#1a2334] text-white p-4 sm:p-8 md:p-16 flex flex-col items-center ">
+    <div className="bg-[#f4f4f4] dark:bg-[#1a2334] text-white p-4 sm:p-8 md:p-16 flex flex-col items-center  ">
       <div className="rounded-2xl max-w-7xl w-full flex flex-col lg:flex-row">
-        <div className="p-8 md:p-12 lg:w-1/2 flex flex-col">
+        <div className="p-2 md:p-12 lg:w-1/2 flex flex-col">
           <p className="text-[#555555] dark:text-white font-medium">Contact</p>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 text-[#f4a950] ">Get in touch</h1>
           <p className="text-[#1f2937] mt-4 max-w-sm text-lg dark:text-white">
@@ -94,7 +94,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="bg-[#f4a95061] p-8 md:p-12 rounded-lg lg:w-1/2">
+        <div className="bg-[#f4a95061] p-4 lg:p-8 md:p-12 rounded-lg lg:w-1/2">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="flex flex-col">
               <label htmlFor="firstName" className="text-[#555555] dark:text-white font-medium mb-1">

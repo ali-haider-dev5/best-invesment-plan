@@ -1,29 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 interface FooterProps {
-  logo?: {
-    url: string;
-    src: string;
-    alt: string;
-    title: string;
-  };
-  sections?: Array<{
-    title: string;
-    links: Array<{ name: string; href: string }>;
-  }>;
+  logo?: { url: string; src: string; alt: string; title: string };
+  sections?: Array<{ title: string; links: Array<{ name: string; href: string }> }>;
   description?: string;
-  socialLinks?: Array<{
-    icon: React.ReactElement;
-    href: string;
-    label: string;
-  }>;
+  socialLinks?: Array<{ icon: React.ReactElement; href: string; label: string }>;
   copyright?: string;
-  legalLinks?: Array<{
-    name: string;
-    href: string;
-  }>;
+  legalLinks?: Array<{ name: string; href: string }>;
 }
 
 const defaultSections = [
@@ -39,9 +24,9 @@ const defaultSections = [
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
+      { name: "About Us", href: "/aboutus" },
+      { name: "Services", href: "services" },
+      { name: "Contact us", href: "/contactus" },
       { name: "Careers", href: "#" },
     ],
   },
@@ -68,7 +53,7 @@ const defaultLegalLinks = [
   { name: "Privacy Policy", href: "#" },
 ];
 
- const Footer = ({
+const Footer = ({
   logo = {
     url: "https://www.shadcnblocks.com",
     src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
@@ -78,26 +63,30 @@ const defaultLegalLinks = [
   sections = defaultSections,
   description = "A collection of components for your startup business or side project.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = "© 2025 Mazo.com. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
-    <section className="py-32 bg-[#f4f4f4] dark:bg-[#0f131b]">
-      <div className="container mx-auto">
-        <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
-          <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
-            {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
-               <img src="/mazo-logo.png" alt="Logo" className="w-32" />
+    <section className="py-24 sm:py-28 bg-[#f4f4f4] dark:bg-[#0f131b] px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        {/* Top: brand + sections */}
+        <div className="flex w-full flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+          {/* Brand column */}
+          <div className="flex w-full flex-col items-center lg:items-start gap-6 text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start">
+              <a href={logo.url} aria-label={logo.title}>
+                <img src="/mazo-logo.png" alt="Logo" className="w-32" />
               </a>
             </div>
-            <p className="max-w-[70%] text-sm text-[#555555] dark:text-white">
+
+            <p className="max-w-xl text-sm text-[#555555] dark:text-white">
               {description}
             </p>
-            <ul className="flex items-center space-x-6 text-[#1e2939] dark:text-white">
+
+            {/* Social: wrap on small screens */}
+            <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-[#1e2939] dark:text-white">
               {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium text-[#555555] hover:text-primary">
+                <li key={idx} className="font-medium text-[#555555] hover:text-primary transition-colors">
                   <a href={social.href} aria-label={social.label}>
                     {social.icon}
                   </a>
@@ -105,16 +94,15 @@ const defaultLegalLinks = [
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+
+          {/* Sections grid: 1→2→3 columns */}
+          <div className="grid w-full gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
+              <div key={sectionIdx} className="text-center sm:text-left">
                 <h3 className="mb-4 font-bold text-[#f4a950]">{section.title}</h3>
                 <ul className="space-y-3 text-sm text-[#555555] dark:text-white">
                   {section.links.map((link, linkIdx) => (
-                    <li
-                      key={linkIdx}
-                      className="font-medium hover:text-primary"
-                    >
+                    <li key={linkIdx} className="font-medium hover:text-primary transition-colors">
                       <a href={link.href}>{link.name}</a>
                     </li>
                   ))}
@@ -123,12 +111,20 @@ const defaultLegalLinks = [
             ))}
           </div>
         </div>
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium text-white md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1 text-[#555555] dark:text-white">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+
+        {/* Bottom bar */}
+        <div className="mt-10 border-t border-black/10 dark:border-white/10" />
+
+        <div className="mt-6 md:mt-8 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4 text-xs font-medium">
+          <p className="text-center md:text-left text-[#555555] dark:text-white">
+            {copyright}
+          </p>
+
+          {/* Legal links: wrap nicely */}
+          <ul className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
             {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary text-[#1e2939] dark:text-white">
-                <a href={link.href} > {link.name}</a>
+              <li key={idx} className="hover:text-primary text-[#1e2939] dark:text-white transition-colors">
+                <a href={link.href}>{link.name}</a>
               </li>
             ))}
           </ul>
@@ -137,5 +133,5 @@ const defaultLegalLinks = [
     </section>
   );
 };
-export default Footer;
 
+export default Footer;

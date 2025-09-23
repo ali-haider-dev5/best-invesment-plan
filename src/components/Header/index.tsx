@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import Image from "next/image";
-import ThemeToggle from '@/components/theme-toggle';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import ThemeToggle from "@/components/theme-toggle";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,20 +22,20 @@ const Header = () => {
     className?: string;
     onClick?: () => void;
   }) {
-    const rawPathname = usePathname() ?? '';
-    const normalize = (s: string) => s.replace(/\/+$/, '');
+    const rawPathname = usePathname() ?? "";
+    const normalize = (s: string) => s.replace(/\/+$/, "");
     const isActive = normalize(rawPathname) === normalize(href);
 
     return (
       <Link
         href={href}
         onClick={onClick}
-        aria-current={isActive ? 'page' : undefined}
+        aria-current={isActive ? "page" : undefined}
         className={cn(
-          'font-semibold uppercase transition-colors',
+          "font-semibold text-sm md:text-md lg:text-lg uppercase transition-colors",
           isActive
-            ? 'text-[#555555] dark:text-[#f3a84f]'
-            : 'text-[#f3a84f] dark:text-white hover:text-[#555555] dark:hover:text-[#f3a84f]',
+            ? "text-[#555555] dark:text-[#f3a84f]"
+            : "text-[#f3a84f] dark:text-white hover:text-[#555555] dark:hover:text-[#f3a84f]",
           className
         )}
       >
@@ -45,12 +45,15 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-[#FFFFFF] fixed top-0 left-0 w-full dark:bg-[#0f131b] text-[#333333] dark:text-[#f5f5f5] z-50 py-5 shadow-md border-b border-[#DDDDDD]">
-      <div className="container mx-auto flex justify-between items-center px-4">
+    <header className="bg-[#FFFFFF] px-4 fixed top-0 left-0 w-full dark:bg-[#0f131b] text-[#333333] dark:text-[#f5f5f5] z-50 py-5 shadow-md border-b border-[#DDDDDD]">
+      <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-                <img src="/mazo-logo.png" alt="Logo" className="w-32" />
+          <Link href="/">
+            <Image src="/mazo-logo.png" width={32} height={32} alt="Logo" className="w-32" />
+          </Link>
         </div>
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex space-x-6 items-center">
           <ActiveLink href="/">Home</ActiveLink>
           <ActiveLink href="/services">Services</ActiveLink>
@@ -64,41 +67,56 @@ const Header = () => {
             Get Started
           </a>
         </nav>
-        <div className="md:hidden">
+
+        {/* Mobile top bar: theme + menu icon */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
           <button
+            type="button"
             onClick={toggleMenu}
-            className="text-[#333333] dark:text-[#f5f5f5] text-2xl"
+            className="text-[#f3a84f] dark:text-[#f3a84f] text-2xl"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             &#9776;
           </button>
         </div>
       </div>
 
+      {/* Mobile drawer */}
       <div
+        id="mobile-menu"
         className={cn(
-          'md:hidden fixed top-0 left-0 w-full h-screen z-50 transform transition-transform duration-300',
-          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full',
-          'bg-[#FFFFFF] dark:bg-[#1f2937] text-[#333333] dark:text-[#f5f5f5]'
+          "md:hidden fixed top-0 left-0 w-full h-screen z-50 transform transition-transform duration-300",
+          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full",
+          "bg-[#FFFFFF] dark:bg-[#1f2937] text-[#333333] dark:text-[#f5f5f5]"
         )}
       >
         <div className="flex justify-between items-center p-4 border-b border-[#DDDDDD] dark:border-[#555555]">
-          <span className="text-2xl font-semibold">Wealth & Trust</span>
-          <button
-            onClick={toggleMenu}
-            className="text-3xl text-[#f3a84f] hover:text-[#0056b3] dark:text-[#f3a84f] dark:hover:text-[#f3a84f]"
-            aria-label="Close menu"
-          >
-            &times;
-          </button>
+          <Link href="/">
+            <Image src="/mazo-logo.png" width={32} height={32} alt="Logo" className="w-32" />
+          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={toggleMenu}
+              className="text-3xl text-[#f3a84f] hover:text-[#0056b3] dark:text-[#f3a84f] dark:hover:text-[#f3a84f]"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+          </div>
         </div>
 
         <nav className="flex flex-col items-center space-y-6 mt-10">
+          <ActiveLink href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            Home
+          </ActiveLink>
           <ActiveLink href="/services" onClick={() => setIsMobileMenuOpen(false)}>
             Services
           </ActiveLink>
-          <ActiveLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+          <ActiveLink href="/aboutus" onClick={() => setIsMobileMenuOpen(false)}>
             About Us
           </ActiveLink>
           <ActiveLink href="/contactus" onClick={() => setIsMobileMenuOpen(false)}>
