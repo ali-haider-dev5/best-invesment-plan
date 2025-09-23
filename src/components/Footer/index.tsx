@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 interface FooterProps {
@@ -88,14 +89,8 @@ const defaultLegalLinks = [
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
               <a href={logo.url}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  className="h-8"
-                />
+               <img src="/mazo-logo.png" alt="Logo" className="w-32" />
               </a>
-              <h2 className="text-xl font-semibold dark:text-white">{logo.title}</h2>
             </div>
             <p className="max-w-[70%] text-sm text-[#555555] dark:text-white">
               {description}
