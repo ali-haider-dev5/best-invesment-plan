@@ -99,6 +99,21 @@ const Gallery6 = ({
     };
   }, [carouselApi]);
 
+  function LeftCardFrame() {
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      {/* top line */}
+      <div className="absolute left-0 right-0 top-8 h-px bg-black via-slate-300 to-transparent dark:via-white/20" />
+      {/* bottom line */}
+      <div className="absolute left-0 right-0 bottom-8 h-px bg-black via-slate-300 to-transparent dark:via-white/20" />
+      {/* left vertical */}
+      <div className="absolute left-8 top-0 bottom-0 w-px bg-black via-slate-300 to-transparent dark:via-white/20" />
+      {/* right vertical */}
+      <div className="absolute right-8 top-0 bottom-0 w-px bg-black via-slate-300 to-transparent dark:via-white/20" />
+    </div>
+  );
+}
+
   return (
     <section className="bg-[#f4f4f4] dark:bg-[#0b111a] py-16 sm:py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6">
@@ -149,6 +164,7 @@ const Gallery6 = ({
                      min-w-0 shrink-0 grow-0 pl-4 basis-4/5 md:basis-1/2 lg:basis-[34%]
                     "
                   >
+                    {isLeftMost && <LeftCardFrame />}
                     <a
                       href={item.url}
                       className="group relative flex h-full flex-col rounded-xl bg-white dark:bg-[#0f131b] transition "

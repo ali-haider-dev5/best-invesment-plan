@@ -34,7 +34,7 @@ const CardContent = React.forwardRef<
 CardContent.displayName = "CardContent";
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant = "default", title, description, children, id, ...props }, ref) => {
+  ({ className,  variant = "default", title, description, children, id, ...props }, ref) => {
     const DotsPattern = () => {
       const sharedClasses =
         "rounded-full outline outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-green-400";
