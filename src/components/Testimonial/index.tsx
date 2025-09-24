@@ -22,13 +22,11 @@ interface GalleryItem {
 
 interface Gallery6Props {
   heading?: string;
-  demoUrl?: string;
   items?: GalleryItem[];
 }
 
 const Gallery6 = ({
   heading = "Trusted by product builders",
-  demoUrl = "https://www.shadcnblocks.com",
   items = [
     {
       id: "item-1",
@@ -116,7 +114,6 @@ const Gallery6 = ({
               high-quality work.
             </p>
             <button
-              href={demoUrl}
               className="flex gap-2 items-center text-white px-4 sm:px-5 py-2 bg-[#f3a84f] uppercase text-xs sm:text-sm font-semibold rounded-lg hover:brightness-95"
             >
               <span>Read our Customer Stories</span> <MoveRight />
