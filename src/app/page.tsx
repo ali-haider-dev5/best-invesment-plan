@@ -6,6 +6,7 @@ import FocusCards, { cards } from "@/components/Gallary";
 import AboutOwner from "@/components/AboutOwner";
 import Faq from "@/components/Faq";
 import ContactUsHeroSection from "@/components/ContactUsHeroSection";
+import { Gallery6 } from "@/components/Testimonial";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutOwner />
       <ContactUsHeroSection />
       <Faq />
+      <Gallery6 />
     </>
   );
 }
