@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection/index";
 import ClientService from "@/components/ClientService/index";
 import CurrentWay from "@/components/CurrentWay/index";
 import { GradientCardDemo } from "@/components/GrippInvesment/index";
-import FocusCards, { cards } from "@/components/Gallary";
+import Gallery from "@/components/Gallery";
 import AboutOwner from "@/components/AboutOwner";
 import Faq from "@/components/Faq";
 import ContactUsHeroSection from "@/components/ContactUsHeroSection";
@@ -15,7 +15,7 @@ export default function Home() {
       <ClientService />
       <CurrentWay />
       <GradientCardDemo />
-      <FocusCards cards={cards} />
+      <Gallery />
       <AboutOwner />
       <ContactUsHeroSection />
       <Faq />

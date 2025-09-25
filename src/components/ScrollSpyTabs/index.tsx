@@ -29,8 +29,6 @@ import {
   Landmark,
   MessageSquareText,
 } from "lucide-react";
-
-/* ----------------------------- Divider component ---------------------------- */
 function DividerLines({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -54,8 +52,6 @@ function DividerLines({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-/* ---------------------------------- Types ---------------------------------- */
 type SectionDef = { id: string; title: string; content: React.ReactNode };
 
 interface Props {
@@ -68,7 +64,6 @@ interface IconProps {
   className: string;
 }
 
-/* --------------------------- Tabs + Scroll/Spy UI --------------------------- */
 function ServicesTabsSection({
   sections,
   headerOffset = 0,
@@ -79,18 +74,15 @@ function ServicesTabsSection({
   const [tabsH, setTabsH] = useState(0);
   const isProgrammaticScroll = useRef(false);
 
-  // id -> element map
   const sectionRefs = useMemo(
     () =>
       sections.reduce<Record<string, HTMLElement | null>>((acc, s) => {
         acc[s.id] = null;
         return acc;
       }, {}),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [sections.map((s) => s.id).join("|")]
   );
 
-  // measure sticky tabs height
   useEffect(() => {
     const update = () => setTabsH(tabsRef.current?.offsetHeight ?? 0);
     update();
@@ -103,7 +95,6 @@ function ServicesTabsSection({
     };
   }, []);
 
-  // collect section elements
   useEffect(() => {
     sections.forEach((s) => {
       sectionRefs[s.id] = document.getElementById(s.id);
@@ -111,7 +102,7 @@ function ServicesTabsSection({
   }, [sections, sectionRefs]);
 
   useEffect(() => {
-    const spyOffset = headerOffset + tabsH; // line just under sticky tabs
+    const spyOffset = headerOffset + tabsH;
     let ticking = false;
 
     const getSentinelPositions = () =>
@@ -133,14 +124,12 @@ function ServicesTabsSection({
         const positions = getSentinelPositions();
         const y = window.scrollY + spyOffset;
 
-        // default = first section until we pass first divider
         let current = sections[0]?.id ?? "";
         for (let i = 0; i < positions.length; i++) {
           if (positions[i].top <= y) current = positions[i].id;
           else break;
         }
 
-        // near bottom → last section
         if (
           window.innerHeight + window.scrollY >=
           document.documentElement.scrollHeight - 2
@@ -160,15 +149,13 @@ function ServicesTabsSection({
       window.removeEventListener("resize", onScroll);
     };
   }, [sections, headerOffset, tabsH, activeId]);
-
-  /* ------------------------------ Click scroll ----------------------------- */
   const scrollToId = (id: string) => {
     const el = sectionRefs[id];
     if (!el) return;
 
-    setActiveId(id); // activate immediately
+    setActiveId(id);
     const offset = headerOffset + tabsH;
-    const targetY = Math.max(el.offsetTop - offset + 4, 0); // slight bias inside the section
+    const targetY = Math.max(el.offsetTop - offset + 4, 0); 
 
     isProgrammaticScroll.current = true;
     window.scrollTo({ top: targetY, behavior: "smooth" });

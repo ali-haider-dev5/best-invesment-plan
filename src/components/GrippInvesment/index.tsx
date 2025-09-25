@@ -1,7 +1,5 @@
 import { Card } from "@/components/GrippInvesment/card";
 import { cn } from "@/lib/utils";
-
-// Explicitly typing the cardContents array
 const cardContents: { id: number; title: string; description: string }[] = [
   {
     id: 1,
@@ -33,12 +31,11 @@ export function GradientCardDemo() {
           {cardContents.map((content) => (
             <Card
               key={content.id}
-              variant="gradient"  // Static variant value
-              id={content.id}  // Pass the id explicitly
-              title={content.title}  // Pass the title
-              description={content.description}  // Pass the description
+              variant="gradient" 
+              id={content.id}  
+              title={content.title}  
+              description={content.description}
                className={cn(
-                // full width on mobile; constrain and balance at larger sizes
                 "w-full sm:w-[48%] md:w-[45%] lg:w-[400px] max-w-[400px] flex-1 px-8",
                 content.id === 1 ? "sm:pr-0" : "",
                 content.id === 2 ? "sm:pl-0" : ""

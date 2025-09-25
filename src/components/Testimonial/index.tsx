@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight, MoveRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Card } from "@/components/GrippInvesment/card";
 
 // Type Interfaces
 interface GalleryItem {
@@ -268,7 +269,7 @@ const Gallery6: React.FC<Gallery6Props> = ({
   useEffect(() => {
     if (!carouselApi) return;
 
-    const onSelect = (): void => {
+    const onSelect = () => {
       setSelectedIndex(carouselApi.selectedScrollSnap());
       setCanScrollPrev(carouselApi.canScrollPrev());
       setCanScrollNext(carouselApi.canScrollNext());
@@ -278,11 +279,11 @@ const Gallery6: React.FC<Gallery6Props> = ({
     onSelect();
   }, [carouselApi]);
 
+
   return (
     <section className="bg-[#f4f4f4] dark:bg-[#0b111a] py-16 sm:py-20 lg:py-28">
-      {/* Header - Contained */}
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl mb-8 md:mb-12 lg:mb-16">
-        <div className="flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="mb-8 md:mb-12 lg:mb-16 flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#0f172a] dark:text-[#f3a84f]">
             {heading}
           </h2>
@@ -299,9 +300,7 @@ const Gallery6: React.FC<Gallery6Props> = ({
         </div>
       </div>
 
-      {/* Carousel - Breaks out to viewport edge */}
-      <div className="relative">
-        <div className="pl-4 sm:pl-6" style={{ paddingLeft: 'max(1rem, calc((100vw - 80rem) / 2))' }}>
+        <div className="">
           <Carousel
             setApi={setCarouselApi}
             className="w-full overflow-visible"
@@ -310,29 +309,79 @@ const Gallery6: React.FC<Gallery6Props> = ({
               align: "start",
             }}
           >
-            {items.map((item, idx) => {
-              const isActive = idx === selectedIndex;
-              
-              return (
-                <div key={item.id} className="h-[650px] pr-0">
-                  <GradientCard
-                    title={item.title}
-                    summary={item.summary}
-                    url={item.url}
-                    image={item.image}
-                    isActive={isActive}
-                  />
-                </div>
-              );
-            })}
+            <CarouselContent className="-ml-2 sm:-ml-3 relative ">
+              {items.map((item, idx) => {
+                const isLeftMost = idx === selectedIndex;
+
+                return (
+                  <CarouselItem
+                    key={item.id}
+                    className="
+                     min-w-0 shrink-0 grow-0 pl-4 basis-4/5 md:basis-1/2 lg:basis-[34%]
+                    "
+                  >
+        
+                    
+                    <a
+                      href={item.url}
+                      className="group relative flex h-full flex-col rounded-xl bg-white dark:bg-[#0f131b] transition "
+                    >
+                      <div className="relative aspect-[3/2] overflow-hidden rounded-t-xl">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        />
+                        {idx !== selectedIndex && (
+                          <div className="absolute inset-0 bg-[#f5a84b]/30 dark:bg-black/50 transition-opacity duration-300 pointer-events-none" />
+                        )}
+                      </div>
+
+                      <div className="p-4 sm:p-5">
+                        <h3
+                          className={[
+                            "mb-2 pt-2 text-sm md:text-lg  sm:text-xl lg:text-2xl font-medium",
+                            isLeftMost
+                              ? "text-[#0f172a] dark:text-white"
+                              : "text-[#f5a84b]",
+                          ].join(" ")}
+                        >
+                          {item.title}
+                        </h3>
+
+                        <p
+                          className={[
+                            "mb-4 text-xs sm:text-base",
+                            isLeftMost
+                              ? "text-slate-600 dark:text-white/80"
+                              : "text-[#f5a84b]",
+                          ].join(" ")}
+                        >
+                          {item.summary}
+                        </p>
+
+                        <span
+                          className={[
+                            "inline-flex items-center text-sm sm:text-base",
+                            isLeftMost
+                              ? "text-[#0f172a] dark:text-white"
+                              : "text-[#f5a84b]",
+                          ].join(" ")}
+                        >
+                          Read more
+                          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
+                    </a>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
           </Carousel>
         </div>
       </div>
 
-      {/* Controls - Contained */}
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl mt-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          {/* Dots */}
+        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="order-2 sm:order-1 flex items-center justify-center gap-2 md:gap-3">
             {Array.from({ length: snapCount }).map((_, i) => {
               const active = i === selectedIndex;
@@ -349,8 +398,6 @@ const Gallery6: React.FC<Gallery6Props> = ({
               );
             })}
           </div>
-
-          {/* Arrows */}
           <div className="order-1 sm:order-2 flex items-center justify-center gap-3 sm:gap-4">
             <Button
               variant="ghost"
