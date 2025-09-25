@@ -35,7 +35,7 @@ function DividerLines({ className = "" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 1440 55"
-      className={`w-full h-auto text-[#D9CAB8]/50 dark:text-[#D9CAB8]/40 ${className}`}
+      className={`w-full h-auto text-[#f3a84f]/50 dark:text-[#f3a84f]/40 ${className}`}
       preserveAspectRatio="none"
       aria-hidden
       role="presentation"
