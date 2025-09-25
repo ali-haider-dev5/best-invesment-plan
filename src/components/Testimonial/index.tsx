@@ -71,20 +71,23 @@ const GradientCard: React.FC<GradientCardProps> = ({
       <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       
-      {/* Card Content - Adjusted padding to stay within borders */}
-      <div className="px-6 pt-12 pb-12 h-full flex flex-col">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl mb-4">
+      {/* Card Content */}
+      <div className="h-full flex flex-col">
+        {/* Top spacer for border extension */}
+        <div className="h-8"></div>
+        
+        <div className="relative aspect-[4/3] overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
           />
           {!isActive && (
             <div className="absolute inset-0 bg-[#f5a84b]/30 dark:bg-black/50 transition-opacity duration-300 pointer-events-none" />
           )}
         </div>
         
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 px-6 py-6">
           <h3 className={`mb-3 text-lg md:text-xl lg:text-2xl font-medium transition-colors ${
             isActive 
               ? "text-[#0f172a] dark:text-white" 
@@ -110,6 +113,9 @@ const GradientCard: React.FC<GradientCardProps> = ({
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </span>
         </div>
+        
+        {/* Bottom spacer for border extension */}
+        <div className="h-8"></div>
       </div>
     </a>
   );
@@ -155,13 +161,13 @@ const Carousel: React.FC<CarouselProps> = ({
   opts 
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [itemsToShow, setItemsToShow] = useState<number>(3);
+  const [itemsToShow, setItemsToShow] = useState<number>(2.5);
 
   useEffect(() => {
     const updateItemsToShow = (): void => {
-      if (window.innerWidth < 768) setItemsToShow(1);
-      else if (window.innerWidth < 1200) setItemsToShow(1.8);
-      else setItemsToShow(2.5);
+      if (window.innerWidth < 768) setItemsToShow(1.3);
+      else if (window.innerWidth < 1200) setItemsToShow(2.3);
+      else setItemsToShow(3.0);
     };
 
     updateItemsToShow();
@@ -169,7 +175,7 @@ const Carousel: React.FC<CarouselProps> = ({
     return () => window.removeEventListener('resize', updateItemsToShow);
   }, []);
 
-  const maxIndex = Math.max(0, children.length - itemsToShow);
+  const maxIndex = Math.max(0, children.length - Math.floor(itemsToShow));
 
   const api: CarouselApi = {
     selectedScrollSnap: () => currentIndex,
@@ -274,9 +280,9 @@ const Gallery6: React.FC<Gallery6Props> = ({
 
   return (
     <section className="bg-[#f4f4f4] dark:bg-[#0b111a] py-16 sm:py-20 lg:py-28">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-        {/* Header */}
-        <div className="mb-8 md:mb-12 lg:mb-16 flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      {/* Header - Contained */}
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl mb-8 md:mb-12 lg:mb-16">
+        <div className="flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#0f172a] dark:text-[#f3a84f]">
             {heading}
           </h2>
@@ -291,12 +297,14 @@ const Gallery6: React.FC<Gallery6Props> = ({
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Carousel - No gaps between cards */}
-        <div className="mb-8">
+      {/* Carousel - Breaks out to viewport edge */}
+      <div className="relative">
+        <div className="pl-4 sm:pl-6" style={{ paddingLeft: 'max(1rem, calc((100vw - 80rem) / 2))' }}>
           <Carousel
             setApi={setCarouselApi}
-            className="w-full"
+            className="w-full overflow-visible"
             opts={{
               loop: true,
               align: "start",
@@ -306,7 +314,7 @@ const Gallery6: React.FC<Gallery6Props> = ({
               const isActive = idx === selectedIndex;
               
               return (
-                <div key={item.id} className="h-[520px]">
+                <div key={item.id} className="h-[650px] pr-0">
                   <GradientCard
                     title={item.title}
                     summary={item.summary}
@@ -319,8 +327,10 @@ const Gallery6: React.FC<Gallery6Props> = ({
             })}
           </Carousel>
         </div>
+      </div>
 
-        {/* Controls */}
+      {/* Controls - Contained */}
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl mt-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Dots */}
           <div className="order-2 sm:order-1 flex items-center justify-center gap-2 md:gap-3">
