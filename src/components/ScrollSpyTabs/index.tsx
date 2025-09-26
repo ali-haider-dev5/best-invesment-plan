@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, Fragment,ComponentType } from "react";
+import { useEffect, useMemo, useRef, useState, Fragment, ComponentType } from "react";
 import { Card } from "@/components/GrippInvesment/card";
 import {
   ShieldCheck,
@@ -29,6 +29,8 @@ import {
   Landmark,
   MessageSquareText,
 } from "lucide-react";
+
+/* ---------------------------- Divider decoration ---------------------------- */
 function DividerLines({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -39,19 +41,12 @@ function DividerLines({ className = "" }: { className?: string }) {
       role="presentation"
     >
       {[2, 12, 22, 32, 42, 52].map((y) => (
-        <line
-          key={y}
-          x1="0"
-          y1={y}
-          x2="1440"
-          y2={y}
-          stroke="currentColor"
-          strokeWidth="4"
-        />
+        <line key={y} x1="0" y1={y} x2="1440" y2={y} stroke="currentColor" strokeWidth="4" />
       ))}
     </svg>
   );
 }
+
 type SectionDef = { id: string; title: string; content: React.ReactNode };
 
 interface Props {
@@ -60,47 +55,56 @@ interface Props {
   headerOffset?: number;
   className?: string;
 }
+
 interface IconProps {
   className: string;
 }
 
-function ServicesTabsSection({
-  sections,
-  headerOffset = 0,
-  className = "",
-}: Props) {
+/* ------------------------------ Tabs + Sections ----------------------------- */
+function ServicesTabsSection({ sections, headerOffset = 0, className = "" }: Props) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const tabsRef = useRef<HTMLDivElement | null>(null);
   const [tabsH, setTabsH] = useState(0);
   const isProgrammaticScroll = useRef(false);
 
+  // map of ids -> HTMLElements
   const sectionRefs = useMemo(
     () =>
       sections.reduce<Record<string, HTMLElement | null>>((acc, s) => {
         acc[s.id] = null;
         return acc;
       }, {}),
+    // stable key for memo
     [sections.map((s) => s.id).join("|")]
   );
 
+  // measure sticky tabs height
   useEffect(() => {
     const update = () => setTabsH(tabsRef.current?.offsetHeight ?? 0);
     update();
-    const ro = new ResizeObserver(update);
-    if (tabsRef.current) ro.observe(tabsRef.current);
+
+    // guard for SSR / ResizeObserver availability
+    let ro: ResizeObserver | null = null;
+    if (typeof window !== "undefined" && "ResizeObserver" in window && tabsRef.current) {
+      ro = new ResizeObserver(update);
+      ro.observe(tabsRef.current);
+    }
+
     window.addEventListener("resize", update);
     return () => {
-      ro.disconnect();
+      ro?.disconnect();
       window.removeEventListener("resize", update);
     };
   }, []);
 
+  // cache section elements
   useEffect(() => {
     sections.forEach((s) => {
       sectionRefs[s.id] = document.getElementById(s.id);
     });
   }, [sections, sectionRefs]);
 
+  // scroll spy
   useEffect(() => {
     const spyOffset = headerOffset + tabsH;
     let ticking = false;
@@ -114,8 +118,7 @@ function ServicesTabsSection({
         .sort((a, b) => a.top - b.top);
 
     const onScroll = () => {
-      if (isProgrammaticScroll.current) return;
-      if (ticking) return;
+      if (isProgrammaticScroll.current || ticking) return;
       ticking = true;
 
       requestAnimationFrame(() => {
@@ -130,10 +133,8 @@ function ServicesTabsSection({
           else break;
         }
 
-        if (
-          window.innerHeight + window.scrollY >=
-          document.documentElement.scrollHeight - 2
-        ) {
+        // bottom edge case
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
           current = sections[sections.length - 1]?.id ?? current;
         }
 
@@ -149,60 +150,67 @@ function ServicesTabsSection({
       window.removeEventListener("resize", onScroll);
     };
   }, [sections, headerOffset, tabsH, activeId]);
+
   const scrollToId = (id: string) => {
     const el = sectionRefs[id];
     if (!el) return;
 
     setActiveId(id);
     const offset = headerOffset + tabsH;
-    const targetY = Math.max(el.offsetTop - offset + 4, 0); 
+    const targetY = Math.max(el.offsetTop - offset + 4, 0);
 
     isProgrammaticScroll.current = true;
     window.scrollTo({ top: targetY, behavior: "smooth" });
 
     const travel = Math.abs(window.scrollY - targetY);
     const duration = Math.min(1200, Math.max(400, travel * 0.6));
-    setTimeout(() => {
+    window.setTimeout(() => {
       isProgrammaticScroll.current = false;
-      window.dispatchEvent(new Event("scroll")); // resync
+      window.dispatchEvent(new Event("scroll")); // resync spy
     }, duration + 20);
   };
 
   return (
-    <section className={`w-full   ${className}`}>
-      {/* Sticky Tabs */}
+    <section className={`w-full ${className}`}>
+      {/* Sticky Tabs (ALWAYS visible; mobile is scrollable) */}
       <div
         ref={tabsRef}
-        className="sticky z-40 bg-white/90 backdrop-blur border-b border-t border-gray-200 dark:bg-[#0b111a]"
+        className="sticky z-40 bg-white/90 backdrop-blur border-b border-t border-gray-200 dark:bg-[#0b111a]/90"
         style={{ top: headerOffset }}
       >
-        <div className="mx-auto max-w-6xl px-4">
-          <ul className="gap-8 overflow-x-auto no-scrollbar py-4 hidden  md:hidden lg:flex">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4">
+          <ul
+            className="
+              flex gap-3 sm:gap-8 overflow-x-auto no-scrollbar py-3 sm:py-4
+              scroll-px-3 sm:scroll-px-4 snap-x snap-mandatory
+            "
+            aria-label="Services tabs"
+          >
             {sections.map(({ id, title }, idx) => {
               const isActive = id === activeId;
               const number = String(idx + 1).padStart(2, "0");
               return (
-                <li key={id} className="shrink-0">
+                <li key={id} className="shrink-0 snap-start">
                   <button
                     type="button"
                     onClick={() => scrollToId(id)}
                     aria-current={isActive ? "page" : undefined}
                     className="relative group pb-1 text-left"
                   >
-                    <div className="text-xs dark:text-[#f3a84f] text-gray-400  mb-1">
+                    <div className="text-[10px] sm:text-xs dark:text-[#f3a84f] text-gray-400 mb-0.5 sm:mb-1">
                       {number}
                     </div>
                     <div
-                      className={`font-semibold text-xl ${
+                      className={`font-semibold text-[14px]  text-base sm:text-lg ${
                         isActive
                           ? "text-[#333333] dark:text-[#f3a84f]"
-                          : "text-gray-500 opacity-50 dark:text-white"
+                          : "text-gray-600/80 dark:text-white/70"
                       }`}
                     >
                       {title}
                     </div>
                     <span
-                      className={`absolute left-0 right-0 -bottom-[16px] h-[2px] transition-colors ${
+                      className={`absolute left-0 right-0 -bottom-[14px] h-[2px] transition-colors ${
                         isActive
                           ? "bg-[#f3a84f] dark:bg-white"
                           : "bg-transparent group-hover:bg-gray-300 dark:group-hover:bg-gray-600"
@@ -216,30 +224,26 @@ function ServicesTabsSection({
         </div>
       </div>
 
-      {/* Sections + Dividers (with sentinels) */}
-      <div className="pt-24 pb-24 dark:bg-[#1a2333f0]">
+      {/* Sections */}
+      <div className="pt-16 sm:pt-20 pb-20 dark:bg-[#1a2333f0]">
         {sections.map(({ id, title, content }, idx) => (
           <Fragment key={id}>
             <div
               id={id}
-              className="mx-auto max-w-6xl px-4 pt-10 md:pt-14"
+              className="mx-auto max-w-6xl px-3 sm:px-4 pt-8 sm:pt-10 md:pt-14"
               style={{ scrollMarginTop: headerOffset + tabsH + 12 }}
             >
-              <h2 className="text-md text-[#555555] font-bold dark:text-white">
+              <h2 className="text-sm sm:text-base text-[#555555] font-bold dark:text-white">
                 {title}
               </h2>
-              <div className="mt-6">{content}</div>
+              <div className="mt-4 sm:mt-6">{content}</div>
             </div>
 
-            {/* Divider BETWEEN sections only; sentinel at its bottom activates NEXT tab */}
+            {/* Divider + sentinel */}
             {idx < sections.length - 1 && (
-              <div className="relative my-12 select-none pointer-events-none">
+              <div className="relative my-10 sm:my-12 select-none pointer-events-none">
                 <DividerLines />
-                <span
-                  data-next={sections[idx + 1].id}
-                  className="absolute bottom-0 left-0 h-0 w-0"
-                  aria-hidden
-                />
+                <span data-next={sections[idx + 1].id} className="absolute bottom-0 left-0 h-0 w-0" aria-hidden />
               </div>
             )}
           </Fragment>
@@ -262,17 +266,16 @@ export default function Page() {
             title: "Individuals and Families",
             content: (
               <>
-                <header className="mb-10">
-                  <p className="text-3xl tracking-[0.14em] dark:text-white text-[#333333]">
+                <header className="mb-8 sm:mb-10">
+                  <p className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
                     Wealth Protection for Individuals and Families
                   </p>
-                  <p className="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
-                    Impactful advice and extensive oversight for your entire
-                    financial life.
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                    Impactful advice and extensive oversight for your entire financial life.
                   </p>
                 </header>
 
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                   {(
                     [
                       {
@@ -356,22 +359,16 @@ export default function Page() {
                       Icon: ComponentType<IconProps>;
                     }[]
                   ).map(({ name, desc, Icon }, i) => (
-                    <Card
-                      key={i}
-                      variant="gradient"
-                      className="flex cursor-pointer flex-col items-start ${className} rounded-xl inner-none"
-                    >
+                    <Card key={i} variant="gradient" className="flex cursor-pointer flex-col items-start rounded-xl inner-none">
                       <div className="pl-2 lg:pl-0 md:pl-0">
-                        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
+                        <div className="mb-3 sm:mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
                           <Icon className="h-5 w-5 text-[#f4a950]" />
                         </div>
-                        <h3 className="font-semibold items-center text-lg">
+                        <h3 className="font-semibold items-center text-base sm:text-lg">
                           {name}
                           <span className="ml-2">{">"}</span>
                         </h3>
-                        <p className="mt-2 text-sm text-neutral-600 dark:text-white">
-                          {desc}
-                        </p>
+                        <p className="mt-2 text-sm text-neutral-700 dark:text-white">{desc}</p>
                       </div>
                     </Card>
                   ))}
@@ -386,18 +383,16 @@ export default function Page() {
             title: "Corporations",
             content: (
               <>
-                <header className="mb-10">
-                  <h2 className="text-3xl tracking-[0.14em] dark:text-white text-[#333333]">
+                <header className="mb-8 sm:mb-10">
+                  <h2 className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
                     A Wealth of Financial Solutions for Every Employee
                   </h2>
-                  <p className="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
-                    We assist with all aspects of fund strategy, harmonizing
-                    corporate objectives with investment strategies to ensure
-                    meaningful impact.
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                    We assist with all aspects of fund strategy, harmonizing corporate objectives with investment strategies to ensure meaningful impact.
                   </p>
                 </header>
 
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
                       name: "Executive Financial Counseling as a Corporate Benefit",
@@ -460,22 +455,16 @@ export default function Page() {
                       Icon: Rocket,
                     },
                   ].map(({ name, desc, Icon }, i) => (
-                    <Card
-                      key={i}
-                      variant="gradient"
-                      className="flex cursor-pointer flex-col items-start rounded-xl inner-none"
-                    >
+                    <Card key={i} variant="gradient" className="flex cursor-pointer flex-col items-start rounded-xl inner-none">
                       <div className="pl-2 lg:pl-0 md:pl-0">
-                        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
+                        <div className="mb-3 sm:mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
                           <Icon className="h-5 w-5 text-[#f4a950]" />
                         </div>
-                        <h3 className="font-semibold items-center text-lg">
+                        <h3 className="font-semibold items-center text-base sm:text-lg">
                           {name}
                           <span className="ml-2">{">"}</span>
                         </h3>
-                        <p className="mt-2 text-sm text-neutral-600 dark:text-white">
-                          {desc}
-                        </p>
+                        <p className="mt-2 text-sm text-neutral-700 dark:text-white">{desc}</p>
                       </div>
                     </Card>
                   ))}
@@ -490,17 +479,16 @@ export default function Page() {
             title: "Nonprofits",
             content: (
               <>
-                <header className="mb-10">
-                  <h2 className="text-3xl tracking-[0.14em] dark:text-white text-[#333333]">
+                <header className="mb-8 sm:mb-10">
+                  <h2 className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
                     A Wealth of Financial Solutions for Nonprofit Organizations
                   </h2>
-                  <p className="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
-                    Impactful advice and extensive oversight for foundations,
-                    endowments, and charities.
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                    Impactful advice and extensive oversight for foundations, endowments, and charities.
                   </p>
                 </header>
 
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
                       name: "Investment Advisory for Nonprofit Organizations",
@@ -523,22 +511,16 @@ export default function Page() {
                       Icon: LineChart,
                     },
                   ].map(({ name, desc, Icon }, i) => (
-                    <Card
-                      key={i}
-                      variant="gradient"
-                      className="flex cursor-pointer flex-col items-start rounded-xl inner-none"
-                    >
+                    <Card key={i} variant="gradient" className="flex cursor-pointer flex-col items-start rounded-xl inner-none">
                       <div className="pl-2 lg:pl-0 md:pl-0">
-                        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center dark:bg-[#0b111a] rounded-xl bg-neutral-100 text-neutral-700">
+                        <div className="mb-3 sm:mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
                           <Icon className="h-5 w-5 text-[#f4a950]" />
                         </div>
-                        <h3 className="font-semibold items-center text-lg">
+                        <h3 className="font-semibold items-center text-base sm:text-lg">
                           {name}
                           <span className="ml-2">{">"}</span>
                         </h3>
-                        <p className="mt-2 text-sm text-neutral-600 dark:text-white">
-                          {desc}
-                        </p>
+                        <p className="mt-2 text-sm text-neutral-700 dark:text-white">{desc}</p>
                       </div>
                     </Card>
                   ))}
