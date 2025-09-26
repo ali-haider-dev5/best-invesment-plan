@@ -194,7 +194,7 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
                 Still have questions?
               </h3>
               <p className="text-[#555555] dark:text-white mb-4">
-                Can't find the answer you're looking for? Our support team is here to help.
+                Cant find the answer you are looking for? Our support team is here to help.
               </p>
               <a 
                 href="mailto:support@company.com"
