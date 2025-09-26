@@ -28,12 +28,6 @@ const HeroSection = () => {
       <div className="w-full relative max-w-6xl space-y-12 z-10">
         {/* Headline + CTA */}
         <div className="flex flex-col items-center text-center space-y-8">
-          <Badge
-            variant="secondary"
-            className="backdrop-blur-sm bg-white/10 dark:text-white border border-[#f3a84f] text-white hover:bg-white/20 px-4 py-2 rounded-full"
-          >
-            ✨ Next Generation Tools
-          </Badge>
 
           <div className="space-y-6 flex items-center justify-center flex-col">
             <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight max-w-3xl">
