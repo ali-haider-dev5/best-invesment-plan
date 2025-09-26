@@ -6,7 +6,7 @@ const images = [
   "/gallery/gallery-2.webp",
   "/gallery/gallery-3.webp",
   "/gallery/gallery-4.webp",
-  "/gallery/gallery-5.WEBP",
+  "/gallery/gallery-5.webp",
   "/gallery/gallery-6.webp",
 ];
 
