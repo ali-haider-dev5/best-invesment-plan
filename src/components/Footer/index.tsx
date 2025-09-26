@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 interface FooterProps {
@@ -86,7 +85,7 @@ const Footer = ({
             {/* Social: wrap on small screens */}
             <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-[#1e2939] dark:text-white">
               {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium text-[#555555] hover:text-primary transition-colors">
+                <li key={idx} className="font-medium text-[#555555] hover:text-primary dark:text-white transition-colors">
                   <a href={social.href} aria-label={social.label}>
                     {social.icon}
                   </a>

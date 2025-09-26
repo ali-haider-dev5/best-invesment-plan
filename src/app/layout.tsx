@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className='mt-[80px]'>
+          <main>
           {children}
           </main>
           <Footer />

@@ -1,5 +1,4 @@
 import React from 'react';
-import AllServices from '@/components/AllServices'
 import ServicesTabsSection from '@/components/ScrollSpyTabs'
 
 const ServicesHero = () => {
