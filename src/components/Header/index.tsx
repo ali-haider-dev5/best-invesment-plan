@@ -169,7 +169,6 @@ export default function Header() {
       >
         <div className="flex items-center justify-between md:block md:items-start md:justify-start">
           <div className="flex items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
               <Link href="/" className="inline-flex items-center">
                 <Image
                   src="/mazo-logo.png"
@@ -198,7 +197,7 @@ export default function Header() {
                   aria-expanded={megaOpen}
                   className="flex items-center gap-1 font-semibold text-sm md:text-md lg:text-lg uppercase dark:text-white text-[#555555] hover:text-[#f3a84f] dark:hover:text-[#f3a84f] transition"
                 >
-                  SERVICES
+                   <ActiveLink href="services">Services</ActiveLink>
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform duration-300",
@@ -210,15 +209,14 @@ export default function Header() {
                 <ActiveLink href="/aboutus">ABOUT US</ActiveLink>
                 <ActiveLink href="/contactus">CONTACT US</ActiveLink>
               </nav>
-            </div>
             <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
-            <a
-              href="#get-started"
-              className="text-white px-4 py-2 bg-[#f3a84f] dark:text-white uppercase font-semibold rounded-lg hover:opacity-95"
-            >
-              Get Started
-            </a>
+              <ThemeToggle />
+              <a
+                href="#get-started"
+                className="text-white px-4 py-2 bg-[#f3a84f] dark:text-white uppercase font-semibold rounded-lg hover:opacity-95"
+              >
+                Get Started
+              </a>
             </div>
           </div>
 
@@ -347,7 +345,7 @@ export default function Header() {
                 aria-expanded={servicesOpen}
                 aria-controls="mobile-services"
               >
-                <span>Services</span>
+                <ActiveLink href="services">Services</ActiveLink>
                 <ChevronDown
                   className={cn(
                     "h-5 w-5 transition-transform",

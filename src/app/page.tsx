@@ -7,6 +7,7 @@ import AboutOwner from "@/components/AboutOwner";
 import Faq from "@/components/Faq";
 import ContactUsHeroSection from "@/components/ContactUsHeroSection";
 import { Gallery6 } from "@/components/Testimonial";
+import  HeroChecklist from "@/components/HeroChecklist";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <GradientCardDemo />
       <Gallery />
       <AboutOwner />
+      <HeroChecklist />
       <ContactUsHeroSection />
       <Faq />
       <Gallery6 />
