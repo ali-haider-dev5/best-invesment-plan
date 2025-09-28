@@ -19,7 +19,7 @@ const features: Feature[] = [
 const HeroSection = () => {
   return (
     <div
-      className="relative min-h-[850px] w-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center justify-center p-8"
+      className="relative min-h-[850px] pt-[146px] md:pt-8 lg:pt-8 w-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center justify-center p-8"
       style={{ backgroundImage: "url('/hero-bg.jpg')" }}
     >
       {/* dark overlay */}

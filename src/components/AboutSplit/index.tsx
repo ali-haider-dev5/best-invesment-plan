@@ -25,7 +25,7 @@ export default function AboutSplit({
   dotColorClassName = "text-[#333333] dark:text-white",
 }: AboutSplitProps) {
   return (
-    <section className="relative isolate bg-white dark:bg-[#192132]">
+    <section className="relative isolate pt-[62px] md:pt-0 lg:pt-0 bg-white dark:bg-[#192132]">
       {/* Right half image (full height on desktop, stacked on mobile) */}
       <div className="md:absolute md:inset-y-0 md:right-0 md:w-1/2">
         <div className="relative aspect-[16/9] w-full md:h-full md:aspect-auto">
