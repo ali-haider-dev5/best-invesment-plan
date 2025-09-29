@@ -67,7 +67,7 @@ const App = () => {
                 <div className="mt-8 flex flex-col md:flex-row md:items-center justify-end space-y-4 md:space-y-0 items-end">
                   <a
                     href="#"
-                    className="px-6 py-3 bg-[#f3a84f] text-white text-sm font-semibold rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300"
+                    className="px-6 py-3 bg-[#f3a84f] text-white text-sm font-semibold rounded-md shadow-lg  transition-colors duration-300"
                   >
                     Read the full review
                   </a>

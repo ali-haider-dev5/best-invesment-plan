@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function RequestDemo() {
   return (
-    <div className="bg-[#f6fafc] dark:bg-[#1a2332] py-16 flex items-center justify-center p-8">
+    <div className="bg-[#f9f8f6]  dark:bg-[#1a2332] py-24 flex items-center justify-center p-8">
       <div className="text-center">
         <h2 className="text-4xl sm:text-5xl md:text-6xl dark:text-white font-extrabold text-[#485669] leading-tight">
           <span className='text-[#f4a950]'>Ready to hear it</span> <br /><span className='dark:text-white'> for yourself?</span>

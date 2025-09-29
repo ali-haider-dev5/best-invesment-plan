@@ -129,7 +129,7 @@ const Gallery6 = ({
               high-quality work.
             </p>
             <button
-              className="flex gap-2 items-center text-white px-4 sm:px-5 py-2 bg-[#f3a84f] uppercase text-xs sm:text-sm font-semibold rounded-lg hover:brightness-95"
+              className="flex gap-2 items-center text-white px-4 sm:px-5 py-2 bg-[#f3a84f] uppercase text-xs sm:text-sm font-semibold rounded-lg"
             >
               <span>Read our Customer Stories</span> <MoveRight />
             </button>

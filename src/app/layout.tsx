@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/Header/index";
+import Header from "@/components/Header/index"
+import ContactUsSection from "@/components/NewContactUsPage/index";
 import Footer from '@/components/Footer/index'
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>
           {children}
           </main>
+          <ContactUsSection />
           <Footer />
         </ThemeProvider>
 

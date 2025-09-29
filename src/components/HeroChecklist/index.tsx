@@ -32,7 +32,7 @@ export default function HeroChecklist() {
           <div className="mt-10">
             <a
               href="#request-checklist"
-              className="inline-flex items-center text-white justify-center rounded-full bg-[#f3a84f] px-6 py-3 text-sm font-semibold text-sky-900 shadow hover:bg-cyan-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              className="inline-flex items-center text-white justify-center rounded-full bg-[#f3a84f] px-6 py-3 text-sm font-semibold text-sky-900 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Request 10-Point Checklist
             </a>
@@ -63,7 +63,7 @@ export default function HeroChecklist() {
                 {/* Play button */}
                 <button
                   onClick={handlePlay}
-                  className="absolute inset-0 m-auto h-16 w-16 rounded-full  text-sky-900 shadow-lg transition"
+                  className="absolute inset-0 bg-white cursor-pointer m-auto h-16 w-16 rounded-full  text-sky-900 shadow-lg transition"
                   aria-label="Play video"
                   title="Play video"
                   style={{ height: 64, width: 64 }}

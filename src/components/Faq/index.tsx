@@ -198,7 +198,7 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
               </p>
               <a 
                 href="mailto:support@company.com"
-                className="inline-flex items-center px-6 py-3 bg-[#f4a950] text-white font-semibold rounded-lg hover:brightness-95 transition-all"
+                className="inline-flex items-center px-6 py-3 bg-[#f4a950] text-white font-semibold rounded-lg transition-all"
               >
                 Contact Support
               </a>
