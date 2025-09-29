@@ -74,7 +74,7 @@ function MegaItem({
       <div className="mt-1 text-[#555555] dark:text-white">{icon}</div>
       <div>
         <div className="flex items-center justify-between">
-          <h4 className="font-semibold text-[#555555] dark:text-white">
+          <h4 className="font-semibold text-[#f4a950] dark:text-white">
             {title}
           </h4>
         </div>
@@ -367,7 +367,7 @@ export default function Header() {
                   <li>
                     <Link
                       href="/services/ad-hoc"
-                      className="block py-2 dark:text-white"
+                      className="block text-[#333333] py-2 dark:text-white"
                       onClick={() => setMobileOpen(false)}
                     >
                       Ad Hoc Analysis
