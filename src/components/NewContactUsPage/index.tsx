@@ -78,7 +78,7 @@ export default function Home() {
         {/* Right block: Form */}
         <div className="md:w-1/2 p-8">
           <p className="text-sm mb-3 flex items-center gap-2 font-medium border-b border-b-[#ccc] pb-2 text-[#333333] dark:text-white">
-            CALL US TO SCHEDULE:{" "}
+            CALL US TO SCHEDULE:
             <a
               href="tel:2122021810"
               className="text-[#f3a84f] text-lg hover:underline"
@@ -89,19 +89,19 @@ export default function Home() {
           <form className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-medium text-[#333333] dark:text-white">
-                First Name{" "}
+                First Name
               </label>
               <input type="text" placeholder="First Name" className="input" />
             </div>
             <div>
               <label className="text-xs font-medium text-[#333333] dark:text-white">
-                Last Name{" "}
+                Last Name
               </label>
               <input type="text" placeholder="Last Name" className="input" />
             </div>
             <div>
               <label className="text-xs font-medium text-[#333333] dark:text-white">
-                Email{" "}
+                Email
               </label>
               <input
                 type="email"
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             <div>
               <label className="text-xs font-medium text-[#333333] dark:text-white">
-                Phone Number{" "}
+                Phone Number
               </label>
               <input
                 type="tel"
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
             <div>
               <label className="text-xs font-medium text-[#333333] dark:text-white">
-                ZIP Code{" "}
+                ZIP Code
               </label>
               <input
                 type="text"
@@ -134,14 +134,14 @@ export default function Home() {
                 Investable Assets
               </label>
               <select
-                name="investableAssets"
+                 name="investableAssets"
                 defaultValue=""
+                 value={assets}
                 className={[
                   "input appearance-none pr-10",
                   assets === "" ? "text-gray-400" : "text-gray-900", // placeholder-like color
                   "[&>option]:text-gray-900", // ensure dropdown options are normal color
                 ].join(" ")}
-                className="input appearance-none pr-10"
                 aria-label="Investable Assets"
                 required
               >
