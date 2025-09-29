@@ -119,7 +119,7 @@ const Gallery6 = ({
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16 flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#0f172a] dark:text-[#f3a84f]">
+          <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#f3a84f] dark:text-[#f3a84f]">
             {heading}
           </h2>
           <div className="max-w-xl">
@@ -186,7 +186,7 @@ const Gallery6 = ({
                           className={[
                             "mb-2 pt-2 text-sm md:text-lg  sm:text-xl lg:text-2xl font-medium",
                             isLeftMost
-                              ? "text-[#0f172a] dark:text-white"
+                              ? "text-[#f5a84b] dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
@@ -197,7 +197,7 @@ const Gallery6 = ({
                           className={[
                             "mb-4 text-xs sm:text-base",
                             isLeftMost
-                              ? "text-slate-600 dark:text-white/80"
+                              ? "text-[#555555] dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
@@ -208,7 +208,7 @@ const Gallery6 = ({
                           className={[
                             "inline-flex items-center text-sm sm:text-base",
                             isLeftMost
-                              ? "text-[#0f172a] dark:text-white"
+                              ? "text-[#555555]/80 dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >

@@ -104,7 +104,7 @@ export default function ContactInfoStagger() {
       body: (
         <a
           href="#book"
-          className="inline-flex items-center justify-center rounded-full bg-[#f3a84f] px-5 py-3 font-semibold text-white shadow-sm hover:opacity-95"
+          className="inline-flex items-center justify-center rounded-lg bg-[#f3a84f] px-5 py-3 font-semibold text-white shadow-sm hover:opacity-95"
         >
           Book a Meeting
         </a>
@@ -130,10 +130,10 @@ export default function ContactInfoStagger() {
                 ].join(" ")}
               >
                 <Icon className="h-10 w-10 dark:text-white text-[#555555]" />
-                <h3 className="mt-8 text-xl dark:text-white font-semibold text-[#333333]">
+                <h3 className="mt-8 text-xl dark:text-white font-semibold text-[#f3a84f]">
                   {title}
                 </h3>
-                <div className="mt-5 text-[17px] dark:text-white leading-7 text-[#333333]/80">
+                <div className="mt-5 text-[17px] dark:text-white leading-7 text-[#555555]/80">
                   {body}
                 </div>
               </div>

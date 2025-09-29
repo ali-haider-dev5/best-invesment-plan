@@ -86,14 +86,14 @@ function FaqRow({
           onClick={() => onToggle(index)}
         >
           <PlusToX open={open} />
-          <span className="text-base lg:text-lg font-semibold leading-snug text-[#555555] dark:text-gray-100">
+          <span className="text-base lg:text-lg font-semibold leading-snug text-[#f4a950]">
             {item.question}
           </span>
         </button>
 
         {open && (
           <div className="pt-4 pl-14">
-            <div className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+            <div className="text-base text-[#555555] dark:text-white leading-relaxed">
               {typeof item.answer === "string" ? (
                 <p>{item.answer}</p>
               ) : (
@@ -146,7 +146,7 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f4a950] mb-6">
               FAQs
             </h1>
-            <p className="text-[#1f2937] dark:text-white text-lg leading-relaxed mb-8">
+            <p className="text-[#555555] dark:text-white text-lg leading-relaxed mb-8">
               Find answers to the most commonly asked questions about our platform and services.
             </p>
             

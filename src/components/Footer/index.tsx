@@ -122,7 +122,7 @@ const Footer = ({
           {/* Legal links: wrap nicely */}
           <ul className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
             {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary text-[#1e2939] dark:text-white transition-colors">
+              <li key={idx} className="hover:text-primary text-[#555555] dark:text-white transition-colors">
                 <a href={link.href}>{link.name}</a>
               </li>
             ))}

@@ -61,12 +61,12 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             <div className="relative z-20 mx-auto py-8 min-h-[242px]">
               <CardContent>
                 {title && (
-                  <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-bold mb-1 text-[#f4a950]">
                     {title}
                   </h3>
                 )}
                 {description && (
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-[#555555] dark:text-white">
                     {description}
                   </p>
                 )}
@@ -88,12 +88,12 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           <div className="relative z-20 mx-auto py-8 min-h-[250px]">
             <CardContent className="px-0 ml-2 sm:px-6 md:px-8 ">
               {title && (
-                <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-gray-100">
+                <h3 className="text-lg font-bold mb-1 text-[#333333] dark:text-gray-100">
                   {title}
                 </h3>
               )}
               {description && (
-                <p className="text-gray-700 dark:text-gray-300">{description}</p>
+                <p className="text-[#555555] dark:text-gray-300">{description}</p>
               )}
               {children}
             </CardContent>

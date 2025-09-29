@@ -23,7 +23,7 @@ export function GradientCardDemo() {
           <h1 className="text-5xl text-[#f4a950] dark:text-[#f4a950] font-semibold mb-2">
             Putting a GRIPP on Investments
           </h1>
-          <p className="text-[20px] mt-4 dark:text-white text-[#333333]">
+          <p className="text-[20px] mt-4 dark:text-white text-[#555555]">
             Fixed Indexed Annuity concepts summarized.
           </p>
         </div>

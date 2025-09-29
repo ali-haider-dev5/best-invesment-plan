@@ -25,14 +25,14 @@ export default function HeroChecklist() {
             10-Point Checklist for <br />
             Selling Your Business
           </h1>
-          <p className="mt-6 text-lg/7 text-[#333333] dark:text-white">
+          <p className="mt-6 text-lg/7 text-[#555555] dark:text-white">
             CEO Founders and Business Owners
           </p>
 
           <div className="mt-10">
             <a
               href="#request-checklist"
-              className="inline-flex items-center text-white justify-center rounded-full bg-[#f3a84f] px-6 py-3 text-sm font-semibold text-sky-900 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              className="inline-flex items-center text-white justify-center rounded-lg bg-[#f3a84f] px-6 py-3 text-sm font-semibold text-sky-900 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Request 10-Point Checklist
             </a>

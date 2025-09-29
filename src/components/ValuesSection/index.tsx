@@ -38,19 +38,19 @@ const VALUES: ValueItem[] = [
 export default function ValuesSection() {
   return (
     <section className="dark:bg-[#192131] bg-white">
-      <div className="container  mx-auto py-16 px-4  border-x-0 border-b-0 ">
+      <div className="container  mx-auto py-16 px-4  border-x-0 border-b-0 text-[#333333] ">
         {/* Eyebrow */}
-        <p className="mb-3 text-sm tracking-[0.2em] text-[#f3a84f]">
+        <p className="mb-3 text-sm tracking-[0.2em] ">
           WHAT DRIVES AND DEFINES US
         </p>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#333333] dark:text-white">
+        <h2 className="text-3xl sm:text-4xl text-[#f3a84f] md:text-5xl font-semibold  dark:text-white">
           Our Values
         </h2>
 
         {/* Intro */}
-        <p className="mt-6 max-w-4xl text-lg leading-8 text-[#3d3d3d] dark:text-white/80">
+        <p className="mt-6 max-w-4xl text-lg leading-8 text-[#555555] dark:text-white/80">
           No matter what stage of your financial journey, you’ll be partnering with
           professionals who embody our core values. These values define our work and
           empower our decision-making to provide an elevated client experience and culture
@@ -71,12 +71,12 @@ export default function ValuesSection() {
                 {/* <span className="inline-grid place-items-center h-16 w-16 rounded-full ring-1 ring-[#f3a84f]/40 bg-white dark:bg-transparent"> */}
                   {v.icon}
                 {/* </span> */}
-                <h3 className="text-xl font-semibold text-[#333333] dark:text-white">
+                <h3 className="text-xl font-semibold text-[#f3a84f] dark:text-[#f3a84f]">
                   {v.title}
                 </h3>
               </div>
 
-              <p className="mt-5 text-[17px] leading-8 text-[#2f2f2f] dark:text-white/80">
+              <p className="mt-5 text-[17px] leading-8 text-[#555555] dark:text-white/80">
                 {v.text}
               </p>
             </article>

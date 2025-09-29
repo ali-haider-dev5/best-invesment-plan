@@ -197,14 +197,14 @@ function ServicesTabsSection({ sections, headerOffset = 0, className = "" }: Pro
                     aria-current={isActive ? "page" : undefined}
                     className="relative group pb-1 text-left"
                   >
-                    <div className="text-[10px] sm:text-xs dark:text-[#f3a84f] text-gray-400 mb-0.5 sm:mb-1">
+                    <div className="text-[10px] sm:text-xs dark:text-[#f3a84f] text-[#f3a84f] mb-0.5 sm:mb-1">
                       {number}
                     </div>
                     <div
                       className={`font-semibold text-[14px]  text-base sm:text-lg ${
                         isActive
-                          ? "text-[#333333] dark:text-[#f3a84f]"
-                          : "text-gray-600/80 dark:text-white/70"
+                          ? "text-[#f3a84f] dark:text-[#f3a84f]"
+                          : "text-[#555555]/80 dark:text-white/70"
                       }`}
                     >
                       {title}
@@ -267,10 +267,10 @@ export default function Page() {
             content: (
               <>
                 <header className="mb-8 sm:mb-10">
-                  <p className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
+                  <p className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-[#f4a950] text-[#f4a950]">
                     Wealth Protection for Individuals and Families
                   </p>
-                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-[#555555] dark:text-white">
                     Impactful advice and extensive oversight for your entire financial life.
                   </p>
                 </header>
@@ -364,7 +364,7 @@ export default function Page() {
                         <div className="mb-3 sm:mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-[#0b111a]">
                           <Icon className="h-5 w-5 text-[#f4a950]" />
                         </div>
-                        <h3 className="font-semibold items-center text-base sm:text-lg">
+                        <h3 className="font-semibold items-center  text-base sm:text-lg">
                           {name}
                           <span className="ml-2">{">"}</span>
                         </h3>
@@ -384,10 +384,10 @@ export default function Page() {
             content: (
               <>
                 <header className="mb-8 sm:mb-10">
-                  <h2 className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
+                  <h2 className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] font-semibold dark:text-[#f4a950] text-[#f4a950]">
                     A Wealth of Financial Solutions for Every Employee
                   </h2>
-                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-[#555555] dark:text-white">
                     We assist with all aspects of fund strategy, harmonizing corporate objectives with investment strategies to ensure meaningful impact.
                   </p>
                 </header>
@@ -480,10 +480,10 @@ export default function Page() {
             content: (
               <>
                 <header className="mb-8 sm:mb-10">
-                  <h2 className="text-2xl sm:text-3xl tracking-[0.08em] sm:tracking-[0.14em] dark:text-white text-[#333333]">
+                  <h2 className="text-2xl sm:text-3xl font-semibold tracking-[0.08em] sm:tracking-[0.14em] dark:text-[#f4a950] text-[#f4a950]">
                     A Wealth of Financial Solutions for Nonprofit Organizations
                   </h2>
-                  <p className="mt-3 sm:mt-4 max-w-3xl text-neutral-700 dark:text-neutral-300">
+                  <p className="mt-3 sm:mt-4 max-w-3xl text-[#555555] dark:text-white">
                     Impactful advice and extensive oversight for foundations, endowments, and charities.
                   </p>
                 </header>

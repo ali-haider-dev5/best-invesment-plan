@@ -57,8 +57,8 @@ const CreativeCards = () => {
   return (
     <section className="creative-cards py-24   relative dark:bg-[#1a2333f0] px-4">
       <div className="text-center">
-        <h1 className="font-bold  dark:text-[#f3a84f] text-4xl lg:text-6xl mb-2">Client Service Menu</h1>
-        <p className="">We are here to provide value and make an impact.</p>
+        <h1 className="font-bold text-[#f3a84f]  dark:text-[#f3a84f] text-4xl lg:text-6xl mb-2">Client Service Menu</h1>
+        <p className="text-[#555555] dark:text-white">We are here to provide value and make an impact.</p>
       </div>
       <div className="container mx-auto px-4 mt-8">
         <div className="flex flex-wrap">
@@ -81,7 +81,7 @@ const CreativeCards = () => {
                     {card.title}
                   </a>
                 </h3>
-                <p className="text-md dark:text-white text-[#55555] mb-8 font-normal leading-[30px] text-center">
+                <p className="text-md dark:text-white text-[#555555] mb-8 font-normal leading-[30px] text-center">
                   {card.description}
                 </p>
                 <a
@@ -112,7 +112,7 @@ const CreativeCards = () => {
                     {card.title}
                   </a>
                 </h3>
-                <p className="text-md dark:text-white text-[#55555] mb-8 font-normal leading-[30px] text-center">
+                <p className="text-md dark:text-white text-[#555555] mb-8 font-normal leading-[30px] text-center">
                   {card.description}
                 </p>
                 <a

@@ -109,10 +109,10 @@ const ContactUs = () => {
 
         {/* Quick Contact Section */}
         <div className="w-full sm:w-2/3 lg:w-1/2 bg-white p-6 rounded-lg shadow-lg mt-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Contact</h3>
-          <p className="text-gray-600">Email: info@roi4presenter.com</p>
-          <p className="text-gray-600">Phone: Austria +43 (664) 6376611 | US +1 (669) 4993865</p>
-          <p className="text-gray-600">Headquarters: Wallgasse 13/PF42 1060 Vienna, Austria</p>
+          <h3 className="text-xl font-semibold text-[#333333] mb-4">Quick Contact</h3>
+          <p className="text-[#555555]">Email: info@roi4presenter.com</p>
+          <p className="text-[#555555]">Phone: Austria +43 (664) 6376611 | US +1 (669) 4993865</p>
+          <p className="text-[#555555]">Headquarters: Wallgasse 13/PF42 1060 Vienna, Austria</p>
         </div>
       </div>
     </div>

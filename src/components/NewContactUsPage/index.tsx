@@ -41,7 +41,7 @@ export default function Home() {
       </section>
 
       {/* Heading */}
-      <h1 className="text-2xl text-[#333333] dark:text-white md:text-3xl font-serif text-center mt-10 mb-12 px-4">
+      <h1 className="text-2xl text-[#f5aa51] font-bold dark:text-white md:text-3xl  text-center mt-10 mb-12 px-4">
         Your Introduction to a Trusted Financial Partner Awaits
       </h1>
 
@@ -50,11 +50,11 @@ export default function Home() {
         {/* Left block */}
         <div className="md:w-1/2 p-8 pb-0  flex flex-col justify-between border border-r border-r-[#3333333">
           <div>
-            <h2 className="text-xl dark:text-[#f5aa51] font-semibold text-[#555555] mb-4">
+            <h2 className="text-xl text-[#f5aa51] font-semibold mb-4">
               Our Concierge Program offers a simple, personalized approach to
               finding your ideal financial advisor.
             </h2>
-            <p className="text-[#333333] text-sm dark:text-white">
+            <p className="text-[#555555] text-sm dark:text-white">
               Schedule your complimentary 30-minute discovery call so we can
               understand your unique financial goals and match you with the
               advisor well suited to your needs.
@@ -88,19 +88,19 @@ export default function Home() {
           </p>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 First Name
               </label>
               <input type="text" placeholder="First Name" className="input" />
             </div>
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Last Name
               </label>
               <input type="text" placeholder="Last Name" className="input" />
             </div>
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Email
               </label>
               <input
@@ -110,7 +110,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Phone Number
               </label>
               <input
@@ -120,7 +120,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 ZIP Code
               </label>
               <input
@@ -130,7 +130,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-[#333333] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Investable Assets
               </label>
               <select
@@ -161,7 +161,7 @@ export default function Home() {
               </span>
             </div>
             <div className="col-span-1 md:col-span-2">
-               <label className="text-xs font-medium text-[#333333] dark:text-white">
+               <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Message (optional)
               </label>
               <textarea

@@ -31,10 +31,8 @@ const App = () => {
                   </svg>
                 </div>
             <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-8 md:p-16 sm:rounded-tl-0 sm:rounded-tr-none sm:rounded-bl-none rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
-              <blockquote className="relative z-10 text-md md:text-2xl font-medium text-[#555555] dark:text-white leading-snug">
-                I need a platform that lets me rapidly transform, and iterate on
-                our data for strategy and process improvement. Mode does just
-                that.
+              <blockquote className="relative z-10 text-md md:text-2xl font-medium text-[#333333] pb-34 dark:text-white leading-snug">
+                Mode is incredibly valuable as a full stack, full-service platform from a data analyst all the way to an end user. Analysts can go deep, end users get the data they need, and our team gets to make everyone a part of the data strategy.
               </blockquote>
             </div>
             <div className="flex">
@@ -60,8 +58,8 @@ const App = () => {
                 </div>
               </div>
               <div className="flex flex-col bg-[#f4f4f4]  dark:bg-[#0f131b] w-full rounded-bl-lg rounded-br-lg  border-t-0 p-6">
-                <span className="text-lg text-[#1e2939] dark:text-white">Alex S.</span>
-                <span className="text-sm font-medium text-[#1e2939] dark:text-white">
+                <span className="text-lg text-[#f3a84f] font-semibold dark:text-white">Alex S.</span>
+                <span className="text-sm font-medium text-[#555555] dark:text-white">
                   Business Intelligence Manager
                 </span>
                 <div className="mt-8 flex flex-col md:flex-row md:items-center justify-end space-y-4 md:space-y-0 items-end">
