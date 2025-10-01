@@ -4,6 +4,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight,MoveRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Card } from "@/components/GrippInvesment/card";
+import BorderButton from '@/components/BorderButton'
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -128,11 +129,7 @@ const Gallery6 = ({
               successful: staying focused, moving quickly, and always aiming for
               high-quality work.
             </p>
-            <button
-              className="flex gap-2 items-center text-white px-4 sm:px-5 py-2 bg-[#f3a84f] uppercase text-xs sm:text-sm font-semibold rounded-lg"
-            >
-              <span>Read our Customer Stories</span> <MoveRight />
-            </button>
+                <BorderButton text="Read our Customer Stories" variant="filled" onClick={() => alert("Filled Clicked!")} />
           </div>
         </div>
 

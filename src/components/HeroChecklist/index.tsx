@@ -3,6 +3,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import BorderButton from '@/components/BorderButton'
 
 export default function HeroChecklist() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,12 +31,7 @@ export default function HeroChecklist() {
           </p>
 
           <div className="mt-10">
-            <a
-              href="#request-checklist"
-              className="inline-flex items-center text-white justify-center rounded-lg bg-[#f3a84f] px-6 py-3 text-sm font-semibold text-sky-900 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-            >
-              Request 10-Point Checklist
-            </a>
+                <BorderButton text="Request 10-Point Checklist" variant="filled" onClick={() => alert("Filled Clicked!")} />
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import BorderButton from '@/components/BorderButton'
 
 const App = () => {
   return (
@@ -63,12 +64,7 @@ const App = () => {
                   Business Intelligence Manager
                 </span>
                 <div className="mt-8 flex flex-col md:flex-row md:items-center justify-end space-y-4 md:space-y-0 items-end">
-                  <a
-                    href="#"
-                    className="px-6 py-3 bg-[#f3a84f] text-white text-sm font-semibold rounded-md shadow-lg  transition-colors duration-300"
-                  >
-                    Read the full review
-                  </a>
+                      <BorderButton text="Read the full review" variant="filled" onClick={() => alert("Filled Clicked!")} />
                 </div>
               </div>
             </div>

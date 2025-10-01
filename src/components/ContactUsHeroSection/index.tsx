@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import BorderButton from '@/components/BorderButton'
 
 // Define types for formData and formErrors
 interface FormData {
@@ -225,12 +226,7 @@ export default function App() {
 
             {/* Submit button */}
             <div className="pt-4">
-              <button
-                type="submit"
-                className="w-full bg-[#f4a950] text-white font-bold py-3 rounded-lg hover:bg-[#f4a950] transition-colors"
-              >
-                Submit
-              </button>
+                <BorderButton text="Submit" fullWidth variant="filled" onClick={() => alert("Filled Clicked!")} />
             </div>
           </form>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import BorderButton from "@/components/BorderButton";
 export type FaqItem = {
   question: string;
   answer: string | React.ReactNode;
@@ -47,12 +47,12 @@ function PlusToX({ open }: { open: boolean }) {
     <span className="relative mr-4 inline-flex min-w-9 h-9 w-9 items-center justify-center rounded-full ring-1 ring-[#f4a950] transition-all duration-300">
       <span
         className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${
-          open ? 'rotate-45' : ''
+          open ? "rotate-45" : ""
         }`}
       />
       <span
         className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${
-          open ? '-rotate-45' : 'rotate-90'
+          open ? "-rotate-45" : "rotate-90"
         }`}
       />
     </span>
@@ -78,7 +78,7 @@ function FaqRow({
       <div className="absolute left-0 bottom-2 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       <div className="absolute left-2 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       <div className="absolute right-2 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      
+
       <div className="overflow-hidden pt-6 pb-6 px-6">
         <button
           type="button"
@@ -108,7 +108,7 @@ function FaqRow({
 }
 
 // Gradient Border Container Component
-const GradientBorderContainer: React.FC<{ 
+const GradientBorderContainer: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className = "" }) => {
@@ -119,11 +119,9 @@ const GradientBorderContainer: React.FC<{
       <div className="absolute left-0 bottom-8 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
       <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      
+
       {/* Content with proper spacing for border extensions */}
-      <div className="px-8 pt-12 pb-12">
-        {children}
-      </div>
+      <div className="px-8 pt-12 pb-12">{children}</div>
     </div>
   );
 };
@@ -135,9 +133,7 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
   return (
     <div className="bg-[#f4f4f4] dark:bg-[#1a2334] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
-        
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          
           {/* Left Side - Content (25-30%) */}
           <div className="lg:w-1/4 flex flex-col justify-start">
             <p className="text-[#555555] dark:text-white font-medium text-sm uppercase tracking-wider mb-4">
@@ -147,27 +143,39 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
               FAQs
             </h1>
             <p className="text-[#555555] dark:text-white text-lg leading-relaxed mb-8">
-              Find answers to the most commonly asked questions about our platform and services.
+              Find answers to the most commonly asked questions about our
+              platform and services.
             </p>
-            
+
             <div className="w-full h-px bg-gradient-to-r from-zinc-300 via-zinc-500 to-zinc-700 dark:from-zinc-800 dark:via-zinc-600 dark:to-zinc-400 my-6"></div>
-            
+
             <div className="space-y-4 text-lg">
               <div>
-                <span className="font-semibold text-[#f4a950]">Support:</span> 
-                <a href="mailto:support@company.com" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                <span className="font-semibold text-[#f4a950]">Support:</span>
+                <a
+                  href="mailto:support@company.com"
+                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
+                >
                   support@company.com
                 </a>
               </div>
               <div>
-                <span className="font-semibold text-[#f4a950]">Sales:</span> 
-                <a href="mailto:sales@company.com" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                <span className="font-semibold text-[#f4a950]">Sales:</span>
+                <a
+                  href="mailto:sales@company.com"
+                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
+                >
                   sales@company.com
                 </a>
               </div>
               <div>
-                <span className="font-semibold text-[#f4a950]">Documentation:</span> 
-                <a href="#" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                <span className="font-semibold text-[#f4a950]">
+                  Documentation:
+                </span>
+                <a
+                  href="#"
+                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
+                >
                   View Guides
                 </a>
               </div>
@@ -187,24 +195,23 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
                 />
               ))}
             </div>
-            
+
             {/* Still have questions section */}
             <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
               <h3 className="text-xl font-semibold text-[#f4a950] mb-2">
                 Still have questions?
               </h3>
               <p className="text-[#555555] dark:text-white mb-4">
-                Cant find the answer you are looking for? Our support team is here to help.
+                Cant find the answer you are looking for? Our support team is
+                here to help.
               </p>
-              <a 
-                href="mailto:support@company.com"
-                className="inline-flex items-center px-6 py-3 bg-[#f4a950] text-white font-semibold rounded-lg transition-all"
-              >
-                Contact Support
-              </a>
+              <BorderButton
+                text="Contact Support"
+                variant="filled"
+                onClick={() => alert("Filled Clicked!")}
+              />
             </div>
           </div>
-
         </div>
       </div>
     </div>

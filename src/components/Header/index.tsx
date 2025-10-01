@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import BorderButton from '@/components/BorderButton'
 import {
   ChevronDown,
   Eye,
@@ -211,12 +212,7 @@ export default function Header() {
               </nav>
             <div className="hidden md:flex items-center gap-4">
               <ThemeToggle />
-              <a
-                href="#get-started"
-                className="text-white px-4 py-2 bg-[#f3a84f] dark:text-white uppercase font-semibold rounded-lg hover:opacity-95"
-              >
-                Get Started
-              </a>
+              <BorderButton text="Get Started" variant="filled" onClick={() => alert("Filled Clicked!")} />
             </div>
           </div>
 

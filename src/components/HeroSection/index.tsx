@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/GrippInvesment/card";
+import BorderButton from '@/components/BorderButton'
 import { Cpu, ShieldCheck, Layers, Zap } from "lucide-react";
 
 type Feature = {
@@ -41,12 +42,9 @@ const HeroSection = () => {
               ultra-fast processing, advanced security, and intuitive design.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <Button className="text-sm px-8 py-3 rounded-xl bg-[var(--brand)] border border-[#f3a84f] text-white shadow-none hover:bg-[var(--brand-dark)] transition-all">
-                Get Started
-              </Button>
-              <Button className="text-sm px-8 py-3 rounded-xl bg-transparent border border-[#f3a84f] text-white shadow-none hover:bg-white/10 transition-all">
-                Learn More
-              </Button>
+                  <BorderButton text="Get Started"  onClick={() => alert("Filled Clicked!")} />
+                      <BorderButton text="Learn More" variant="outlined" outlinedColor="#fff" onClick={() => alert("Filled Clicked!")} />
+
             </div>
           </div>
         </div>

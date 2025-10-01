@@ -1,19 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import BorderButton from '@/components/BorderButton'
 import {
   Phone,
   Inbox,
   MapPin,
   CalendarDays,
 } from "lucide-react";
-
-/**
- * ContactInfoStagger
- * - 1→4 col responsive layout
- * - Staggered enter animation (200ms steps)
- * - Animates once, when scrolled ~20% into view
- */
 export default function ContactInfoStagger() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -102,12 +96,7 @@ export default function ContactInfoStagger() {
       Icon: CalendarDays,
       title: "Schedule Follow-Up",
       body: (
-        <a
-          href="#book"
-          className="inline-flex items-center justify-center rounded-lg bg-[#f3a84f] px-5 py-3 font-semibold text-white shadow-sm hover:opacity-95"
-        >
-          Book a Meeting
-        </a>
+           <BorderButton text="  Book a Meeting" fullWidth variant="filled" onClick={() => alert("Filled Clicked!")} />
       ),
     },
   ];

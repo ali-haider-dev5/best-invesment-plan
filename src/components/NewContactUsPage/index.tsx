@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import BorderButton from "@/components/BorderButton";
 
 export default function Home() {
   const [assets, setAssets] = useState("");
@@ -134,9 +135,9 @@ export default function Home() {
                 Investable Assets
               </label>
               <select
-                 name="investableAssets"
+                name="investableAssets"
                 defaultValue=""
-                 value={assets}
+                value={assets}
                 className={[
                   "input appearance-none pr-10",
                   assets === "" ? "text-gray-400" : "text-gray-900", // placeholder-like color
@@ -161,7 +162,7 @@ export default function Home() {
               </span>
             </div>
             <div className="col-span-1 md:col-span-2">
-               <label className="text-xs font-medium text-[#555555] dark:text-white">
+              <label className="text-xs font-medium text-[#555555] dark:text-white">
                 Message (optional)
               </label>
               <textarea
@@ -171,9 +172,11 @@ export default function Home() {
             </div>
 
             <div className="col-span-1 md:col-span-1 ">
-              <button className="bg-[#f4a950] text-white font-semibold py-3 px-6 rounded-md w-full">
-                SCHEDULE NOW
-              </button>
+              <BorderButton
+                text=" SCHEDULE NOW"
+                variant="filled"
+                onClick={() => alert("Filled Clicked!")}
+              />
             </div>
           </form>
         </div>
