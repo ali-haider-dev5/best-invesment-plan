@@ -37,7 +37,7 @@ const ContactUs = () => {
   return (
     <div className='flex flex-col'>
       <div className="w-full bg-[#f4f4f4] text-white text-center py-12 mb-6 rounded-t-lg">
-        <h1 className="text-3xl font-semibold">Get In Touch</h1>
+        <h1 className="text-3xl">Get In Touch</h1>
         <p className="text-xl mt-2">Let’s Talk!</p>
       </div>
       <div className="flex gap-3 items-center p-10 bg-gray-100">
