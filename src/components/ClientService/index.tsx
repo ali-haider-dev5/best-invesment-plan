@@ -1,195 +1,165 @@
-'use client'
+"use client";
 import React from "react";
-import { ChevronsRight } from "lucide-react";
-
-const cardData = [
+import {
+  ArrowDownLeft,
+  CircleFadingPlus,
+  Thermometer,
+  BadgeAlert,
+  BaggageClaim,
+  BookmarkCheck,
+  Medal,
+} from "lucide-react";
+import { Card } from "@/components/GrippInvesment/card";
+import Image from "next/image";
+const testData: TestItem[] = [
   {
-    id: 1,
-    title: "Core Planning",
+    icon: <CircleFadingPlus />,
+    title: "APC",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/fV0GzDqj/construction.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "APC testing measures the total number of aerobic bacteria present in a food sample, providing insights into its overall microbial load and freshness.",
   },
   {
-    id: 2,
-    title: "Traditional Designs",
+    icon: <BaggageClaim />,
+    title: "Y & M",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/KjGz3dmZ/skyline.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "Y & M analysis detects the presence and levels of yeast and mold in food products, ensuring they meet safety standards and remain free from spoilage.",
   },
   {
-    id: 3,
-    title: "Quality Materials",
+    icon: <BookmarkCheck />,
+    title: "Salmonella",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/whkhVgQz/best-practice.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "Salmonella testing identifies the presence of this harmful bacterium in food, crucial for preventing foodborne illness outbreaks and ensuring consumer safety.",
   },
   {
-    id: 4,
-    title: "Quality Materials",
+    icon: <Medal />,
+    title: "Staphylococcus",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/whkhVgQz/best-practice.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "Staphylococcus is a genus of Gram positive bacteria commonly found on the skin and mucous membranes of humans and animals. These bacteria are part of the normal flora, meaning they naturally exist in and on our bodies.",
   },
   {
-    id: 5,
-    title: "Quality Materials",
+    icon: <Thermometer />,
+    title: "Water Activity",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/whkhVgQz/best-practice.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "Water activity testing determines the amount of free water available for microbial growth, crucial for food preservation and safety.",
   },
   {
-    id: 6,
-    title: "Quality Materials",
+    icon: <Medal />, 
+    title: "Moisture Content",
     description:
-      "Lorem ipsum dolor sit amet, consectne auctor aliquet. Aenean sollicitudi bibendum auctor.",
-    imageUrl: "https://i.ibb.co/whkhVgQz/best-practice.png",
-    link: "https://www.fiverr.com/s/8zElN2v",
+      "Moisture content analysis determines the amount of water present in a food sample, essential for maintaining product texture, stability, and safety.",
   },
 ];
+interface TestItem {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+interface TestCardProps {
+  item: TestItem;
+}
 
-const CreativeCards = () => {
-  return (
-    <section className="creative-cards py-24   relative dark:bg-[#1a2333f0] px-4">
-      <div className="text-center">
-        <h1 className="font-bold text-[#f3a84f]  dark:text-[#f3a84f] text-4xl lg:text-6xl mb-2">Client Service Menu</h1>
-        <p className="text-[#555555] dark:text-white">We are here to provide value and make an impact.</p>
-      </div>
-      <div className="container mx-auto px-4 mt-8">
-        <div className="flex flex-wrap">
-          {cardData.slice(0,3).map((card) => (
-            <div
-              key={card.id}
-              className="card-column w-full sm:w-1/2 lg:w-1/3 p-4"
-            >
-              <div className="card-details before:bg-[#f4f4f4] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
-                <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
-                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#f3a84f] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
-                  <img
-                    className="light-icon relative w-16 h-16"
-                    src={card.imageUrl}
-                    alt={`${card.title} Icon`}
-                  />
-                </div>
-                <h3 className="mt-12 mb-4 text-2xl font-bold text-center">
-                  <a href={card.link} className="text-[#333333] no-underline dark:text-white">
-                    {card.title}
-                  </a>
-                </h3>
-                <p className="text-md dark:text-white text-[#555555] mb-8 font-normal leading-[30px] text-center">
-                  {card.description}
-                </p>
-                <a
-                  className="read-more-btn flex justify-center items-center w-12 h-12 border-2 border-yellow-200 rounded-full bg-white opacity-0 group-hover:opacity-100 transform group-hover:translate-x-2 transition-all duration-300"
-                  href={card.link}
-                >
-                  <ChevronsRight className='dark:text-black' />
-                </a>
-              </div>
-            </div>
-          ))}
-            {cardData.slice(3,6).map((card,index) => (
-            <div
-              key={card.id}
-              className={`${index === 0 ? "" : "" } card-column w-full sm:w-1/2 lg:w-1/3 p-4`}
-            >
-              <div className="card-details before:bg-[#f4f4f4] w-4/5 mx-auto relative transition-all duration-300 ease-in-out">
-                <div className="card-icons w-36 h-36 relative mx-auto flex items-center justify-center group-hover:bg-[#0185c7]">
-                  <div className="absolute top-0 left-0 w-full h-full border-2 border-[#f3a84f] transform skew-x-[-20deg] transition-all duration-300 ease-in-out" />
-                  <img
-                    className="light-icon relative w-16 h-16"
-                    src={card.imageUrl}
-                    alt={`${card.title} Icon`}
-                  />
-                </div>
-                <h3 className="mt-12 mb-4 text-2xl font-bold text-center">
-                  <a href={card.link} className="text-[#333333] no-underline dark:text-white">
-                    {card.title}
-                  </a>
-                </h3>
-                <p className="text-md dark:text-white text-[#555555] mb-8 font-normal leading-[30px] text-center">
-                  {card.description}
-                </p>
-                <a
-                  className="read-more-btn flex justify-center items-center w-12 h-12 border-2 border-yellow-200 rounded-full bg-white opacity-0 group-hover:opacity-100 transform group-hover:translate-x-2 transition-all duration-300"
-                  href={card.link}
-                >
-                  <ChevronsRight className='dark:text-black' />
-                </a>
-              </div>
-            </div>
-          ))}
+const TestCard = ({ item }: TestCardProps) => (
+  <div className="relative">
+    <div className="absolute left-0 -top-[1px] h-px w-full bg-gradient-to-l from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+    <div className="absolute -bottom-[1px] left-0 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+    <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -left-[px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+    <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -right-[1px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+    <div className="p-8 bg-white dark:bg-[#0f131b]  flex flex-col h-full ">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex items-center text-gray-700">
+          <div className="text-[#f5aa51] w-10 h-10 rounded-lg bg-[#555555]/10 dark:bg-[#f5aa51] flex items-center justify-center mr-3 dark:text-white">
+            {item.icon}
+          </div>
+          <h3 className="text-base font-semibold text-[#f5aa51] dark:text-[#f5aa51]">
+            {item.title}
+          </h3>
         </div>
       </div>
-      <style jsx>{`
-        .creative-cards .container {
-          max-width: 1320px;
-        }
-        .card-details:before {
-          content: "";
-          width: 190px;
-          height: 380px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%) skew(-20deg, 0deg);
-          z-index: -1;
-          transition: 0.3s ease-in-out;
-        }
-        .card-details:hover:before {
-          background-color: #f4a95061;
-        } 
+      <p className="text-sm text-[#555555] dark:text-white leading-relaxed mt-2 flex-grow">
+        {item.description}
+      </p>
+    </div>
+  </div>
+);
 
+export default function App() {
+  const topCards = testData.slice(0, 2);
+  const middleCards = testData.slice(2, 6);
 
-        .dark .card-details::before {
-          background: #333!important;
-        }
-        .card-icons:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          border: 1px solid;
-          width: 100%;
-          height: 100%;
-          transform: skew(-20deg, 0deg);
-          background: #fff;
-          border-color: #ffee02;
-          transition: 0.3s ease-in-out;
-        }
-        .card-details:hover .card-icons:before {
-          background-color: #f3a84f;
-        }
-        .read-more-btn {
-          width: 50px;
-          height: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid;
-          border-radius: 100%;
-          margin: auto;
-          background: #fff;
-          transform: translateX(-10px);
-          opacity: 0;
-          visibility: hidden;
-          border-color: #f3a84f;
-          transition: 0.3s ease-in-out;
-          text-decoration: none;
-        }
-        .card-details:hover .read-more-btn {
-          transform: translateX(0);
-          opacity: 1;
-          visibility: visible;
-        }
-      `}</style>
-    </section>
+  return (
+    <div
+      className=" bg-right bg-contain dark:bg-[#1a2334] bg-no-repeat px-4 p-4 sm:p-8 lg:p-12 font-inter relative"
+      style={{ backgroundImage: "url('/service-transparent.png')" }}
+    >
+      <div className="container mx-auto">
+        <div>
+          <div className="flex  items-center justify-center mb-12 gap-4">
+            <ArrowDownLeft className="h-12 w-12 text-[#f5aa51]" />
+            <h2 className="text-5xl sm:text-6xl text-[#f5aa51] font-extrabold  flex items-center justify-center">
+              What You Can Test
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4">
+            {topCards.map((item) => (
+              <TestCard key={item.title} item={item} />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            {middleCards.map((item) => (
+              <TestCard key={item.title} item={item} />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4">
+            <div className="relative   bg-white dark:bg-[#0f131b] flex flex-col h-full md:col-start-3 md:col-span-1">
+              <div className="absolute left-0 -top-[1px] h-px w-full bg-gradient-to-l from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute -bottom-[1px] left-0 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -left-[px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -right-[1px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center text-gray-700">
+                    <div className="text-[#f5aa51] w-10 h-10 rounded-lg bg-[#555555]/10 dark:bg-[#f5aa51] flex items-center justify-center mr-3 dark:text-white">
+                      <Thermometer />
+                    </div>
+                    <h3 className="text-base font-semibold text-[#f5aa51] dark:text-[#f5aa51]">
+                      pH and acidity
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-sm text-[#555555] dark:text-white leading-relaxed mt-2 flex-grow">
+                  pH and acidity testing assesses the acidity level of food
+                  products, vital for preserving taste, texture, and inhibiting
+                  bacterial growth.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative   bg-white dark:bg-[#0f131b] flex flex-col h-full">
+              <div className="absolute left-0 -top-[1px] h-px w-full bg-gradient-to-l from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute -bottom-[1px] left-0 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -left-[px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="absolute inset-y-0 -top-[5px] -bottom-[5px] -right-[1px] w-px bg-gradient-to-t from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center text-gray-700">
+                    <div className="text-[#f5aa51] w-10 h-10 rounded-lg bg-[#555555]/10 dark:bg-[#f5aa51] flex items-center justify-center mr-3 dark:text-white">
+                      <BadgeAlert />
+                    </div>
+                    <h3 className="text-base font-semibold text-[#f5aa51] dark:text-[#f5aa51]">
+                      Coliform / E. coli
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-sm text-[#555555] dark:text-white leading-relaxed mt-2 flex-grow">
+                  Coliform and E. coli testing identifies the presence of fecal
+                  contamination in food products, ensuring they meet hygiene
+                  standards and are safe for consumption.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default CreativeCards;
+}

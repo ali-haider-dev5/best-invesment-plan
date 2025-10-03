@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection/index";
-import ClientService from "@/components/ClientService/index";
+import ClientService from "@/components/ClientService";
 import CurrentWay from "@/components/CurrentWay/index";
 import { GradientCardDemo } from "@/components/GrippInvesment/index";
 import Gallery from "@/components/Gallery";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <ClientService />
+      <ClientService  />
       <CurrentWay />
       <HeroChecklist />
       <GradientCardDemo />

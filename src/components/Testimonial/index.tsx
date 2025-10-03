@@ -27,7 +27,6 @@ interface Gallery6Props {
 }
 
 const Gallery6 = ({
-  heading = "Trusted by product builders",
   items = [
     {
       id: "item-1",
@@ -120,9 +119,14 @@ const Gallery6 = ({
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16 flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div>
           <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#f3a84f] dark:text-[#f3a84f]">
-            {heading}
+            Trusted by  
           </h2>
+           <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#f3a84f] dark:text-[#f3a84f]">
+            product builders
+          </h2>
+          </div>
           <div className="max-w-xl">
             <p className="text-[#555555] dark:text-white/80 mb-4 text-sm sm:text-base">
               Streamline is built on the habits that make the best product teams
