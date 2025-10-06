@@ -8,13 +8,6 @@ import ContactUsSection from '@/components/NewContactUsPage';
 import Footer from '@/components/Footer';
 import './globals.css';
 
-export const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-ibm-plex-sans',
-});
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -26,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       {/* Put the font variable on body (or html) — but only once */}
-      <body className={ibmPlexSans.variable}>
+      <body>
         {/* Set defaultTheme here instead of hardcoding "dark" on <html> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
