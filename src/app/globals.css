@@ -22,6 +22,7 @@
 @custom-variant dark (&:is(.dark *));
 h1,h2,h3,h4,h5,h6{
         font-family: "Quera", sans-serif;
+        letter-spacing: 1px;
 
 }
 body{
