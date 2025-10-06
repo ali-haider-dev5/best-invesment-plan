@@ -73,44 +73,44 @@ const IconSecureReliability = () => (
 const featuresData = [
   {
     id: 1,
-    title: "Powerful automation",
+    title: "$182,100",
     description:
-      "Fully automate your most challenging support conversations to reduce costs, increase capacity, and deliver superior on-brand experiences to your customers.",
+      "Average retirement balance for ages 60–69.",
     icon: <IconPowerfulAutomation />,
   },
   {
     id: 2,
-    title: "Unlimited scale",
+    title: "40%",
     description:
-      "Deploy industry-leading AI to handle enterprise-scale conversation volumes and engage customers instantly – in 45 languages and counting.",
+      "Estimated divorces linked to financial problems.",
     icon: <IconUnlimitedScale />,
   },
   {
     id: 3,
-    title: "Consistent CX",
+    title: "60%",
     description:
-      "Build loyalty, drive revenue, and stand out from the crowd by delivering consistent, connected conversational experiences across voice, chat, SMS, and beyond.",
+      "Will be diagnosed with an illness; financial stress is a leading factor.",
     icon: <IconConsistentCX />,
   },
   {
     id: 4,
-    title: "Rich data",
+    title: "63%",
     description:
-      "Use AI to analyze every call as it happens and surface actionable data for operational improvements and discovering new opportunities.",
+      "Living paycheck to paycheck.",
     icon: <IconRichData />,
   },
   {
     id: 5,
-    title: "Agile excellence",
+    title: "67%",
     description:
-      "Adapt and refine your CX strategy faster than ever before with a user-friendly platform for creating rich, responsive conversational journeys.",
+      "Have never made a financial plan.",
     icon: <IconAgileExcellence />,
   },
   {
     id: 6,
-    title: "Secure reliability",
+    title: "68%",
     description:
-      "Automate with confidence thanks to the most advanced AI guardrails and data security protections to ensure that your agents always perform as expected.",
+      "Say they’re not on track to retire.",
     icon: <IconSecureReliability />,
   },
 ];
@@ -125,7 +125,7 @@ const FeaturesSection = () => {
       <div className="px-4 flex  justify-between h-full gap-10 lg:gap-12">
         <div className="flex  flex-col justify-center pt-20 pr-0 lg:pr-20 pb-20 pl-[calc(50vw-635px)] ">
           <h2 className="text-4xl lg:text-5xl text-[#f3a84f] font-bold mb-8 leading-tight">
-            Earn trust from the first word.
+            The Current Way Isn’t Working
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
             {featuresData.map((feature) => (

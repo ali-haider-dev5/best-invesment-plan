@@ -1,6 +1,8 @@
+// app/components/Faq.tsx
 "use client";
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import BorderButton from "@/components/BorderButton";
+
 export type FaqItem = {
   question: string;
   answer: string | React.ReactNode;
@@ -8,181 +10,144 @@ export type FaqItem = {
 
 const DEFAULT_ITEMS: FaqItem[] = [
   {
-    question:
-      "What kinds of agencies use User Interviews for participant recruitment?",
+    question: "What does Mazco LLC specialize in?",
     answer:
-      "Research consultancies, market research agencies, and marketing firms rely on our Recruit panel to source diverse participants quickly without sacrificing quality.",
+      "Tax-advantaged wealth strategies that prioritize downside protection and lifetime income: Fixed Indexed Annuities (FIAs), Infinite/Family Banking structures, and comprehensive planning for retirement, legacy, and business owners.",
   },
   {
-    question:
-      "What is the best participant recruitment tool for research agencies?",
+    question: "How do Fixed Indexed Annuities fit into a portfolio?",
     answer:
-      "A platform with advanced screeners, feasibility checks, and API automation—so you can target, schedule, and manage studies at scale.",
+      "FIAs credit interest linked to an external index (subject to caps/participation) while providing principal protection from market losses. They can complement equities by smoothing sequence-of-returns risk and offering optional lifetime income riders.",
   },
   {
-    question: "Do you support B2B and accessibility studies?",
+    question: "What is Infinite (Family) Banking and when is it appropriate?",
     answer:
-      "Yes. You can reach niche B2B roles and accessibility participants, with flexible targeting and compliance-friendly workflows.",
+      "It’s a cash-value life insurance strategy designed for liquidity, control, and multi-generational planning. Properly structured, it can create a private reserve to fund opportunities, manage cash flow, and enhance estate outcomes—often attractive to entrepreneurs and families with variable income.",
   },
   {
-    question: "How quickly can I recruit participants?",
+    question: "Do you work with business owners preparing for an exit?",
     answer:
-      "Most studies are filled within 24-48 hours, depending on your targeting criteria and study requirements.",
+      "Yes. We coordinate pre- and post-liquidity planning—income replacement, tax-aware allocation, asset protection, and legacy/estate coordination—so more of your proceeds support long-term goals.",
   },
   {
-    question: "What quality assurance measures do you have?",
+    question: "How does Mazco differ from large annuity providers and RIAs?",
     answer:
-      "We use multi-layered screening, behavioral analysis, and continuous monitoring to ensure high-quality participants for your research.",
+      "We’re product-agnostic and planning-first. We evaluate carriers and crediting methods across the market to align with your objectives (income, accumulation, or legacy), then integrate solutions into an overall plan rather than selling a single product.",
   },
   {
-    question: "Do you offer international recruitment?",
+    question: "Do you provide tax or legal advice?",
     answer:
-      "Yes, we have participants in over 40 countries and can help you recruit globally for your research studies.",
+      "We do not provide tax or legal advice. We’ll collaborate with your CPA/attorney and can introduce vetted professionals as needed to implement strategies correctly.",
+  },
+  {
+    question: "What type of client is a good fit for Mazco?",
+    answer:
+      "Affluent individuals and business owners seeking downside protection, pension-like income options, and tax-efficient accumulation/transfer strategies—especially if approaching retirement, planning an exit, or focused on multi-generational wealth.",
+  },
+  {
+    question: "How quickly can I get recommendations?",
+    answer:
+      "After a discovery call and data review, initial strategy outlines are typically provided within 1–2 weeks, depending on case complexity and coordination with outside advisors.",
   },
 ];
 
-// Plus to X animation component
 function PlusToX({ open }: { open: boolean }) {
   return (
-    <span className="relative mr-4 inline-flex min-w-9 h-9 w-9 items-center justify-center rounded-full ring-1 ring-[#f4a950] transition-all duration-300">
-      <span
-        className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${
-          open ? "rotate-45" : ""
-        }`}
-      />
-      <span
-        className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${
-          open ? "-rotate-45" : "rotate-90"
-        }`}
-      />
+    <span
+      className="relative mr-4 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-[#f4a950] transition-all duration-300"
+      aria-hidden="true"
+    >
+      <span className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${open ? "rotate-45" : ""}`} />
+      <span className={`absolute h-[2px] w-5 bg-[#f4a950] transition-transform duration-300 ${open ? "-rotate-45" : "rotate-90"}`} />
     </span>
   );
 }
 
-// Simple FAQ Row Component with Gradient Borders
 function FaqRow({
-  item,
-  index,
-  open,
-  onToggle,
+  item, index, open, onToggle, baseId,
 }: {
-  item: FaqItem;
-  index: number;
-  open: boolean;
-  onToggle: (i: number) => void;
+  item: FaqItem; index: number; open: boolean; onToggle: (i: number) => void; baseId: string;
 }) {
+  const headingId = `${baseId}-q-${index}`;
+  const panelId = `${baseId}-a-${index}`;
+
   return (
     <div className="mb-4 relative">
-      {/* Gradient Border Lines for each FAQ item */}
-      <div className="absolute left-0 top-2 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute left-0 bottom-2 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute left-2 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute right-2 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+      {/* gradient hairlines */}
+      <div className="pointer-events-none absolute left-0 top-2 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+      <div className="pointer-events-none absolute left-0 bottom-2 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+      <div className="pointer-events-none absolute left-2 top-0 h-full w-px bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
+      <div className="pointer-events-none absolute right-2 top-0 h-full w-px bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
 
       <div className="overflow-hidden pt-6 pb-6 px-6">
+        <h3 id={headingId} className="sr-only">{item.question}</h3>
         <button
           type="button"
-          className="group flex w-full items-center gap-2 text-left focus:outline-none hover:opacity-80 transition-opacity"
+          aria-expanded={open}
+          aria-controls={panelId}
+          className="group flex w-full items-center gap-2 text-left focus:outline-none hover:opacity-80 transition-opacity focus-visible:ring-2 focus-visible:ring-[#f4a950] focus-visible:ring-offset-2 rounded-md"
           onClick={() => onToggle(index)}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onToggle(index); } }}
         >
           <PlusToX open={open} />
-          <span className="text-base lg:text-lg font-semibold leading-snug text-[#f4a950]">
-            {item.question}
-          </span>
+          <span className="text-base lg:text-lg font-semibold leading-snug text-[#f4a950]">{item.question}</span>
         </button>
 
-        {open && (
-          <div className="pt-4 pl-14">
-            <div className="text-base text-[#555555] dark:text-white leading-relaxed">
-              {typeof item.answer === "string" ? (
-                <p>{item.answer}</p>
-              ) : (
-                item.answer
-              )}
-            </div>
+        <div id={panelId} role="region" aria-labelledby={headingId} className={`${open ? "mt-4 pl-14" : "hidden"}`}>
+          <div className="text-base text-[#555555] dark:text-white leading-relaxed">
+            {typeof item.answer === "string" ? <p>{item.answer}</p> : item.answer}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
 }
 
-// Gradient Border Container Component
-const GradientBorderContainer: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-}> = ({ children, className = "" }) => {
-  return (
-    <div className={`relative ${className}`}>
-      {/* Gradient Border Lines - Vertical lines extend beyond horizontal */}
-      <div className="absolute left-0 top-8 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute left-0 bottom-8 h-px w-full bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-      <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 dark:from-zinc-900 dark:via-zinc-700 dark:to-zinc-500" />
-
-      {/* Content with proper spacing for border extensions */}
-      <div className="px-8 pt-12 pb-12">{children}</div>
-    </div>
-  );
-};
-
 export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const baseId = useId();
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
     <div className="bg-[#f4f4f4] dark:bg-[#1a2334] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
+      <div className="container mx-auto px-4 sm:px-8 md:px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Left Side - Content (25-30%) */}
+          {/* Left panel */}
           <div className="lg:w-1/4 flex flex-col justify-start">
             <p className="text-[#555555] dark:text-white font-medium text-sm uppercase tracking-wider mb-4">
-              Help Center
+              About Mazco LLC
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f4a950] mb-6">
-              FAQs
-            </h1>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f4a950] mb-6">FAQs</h2>
             <p className="text-[#555555] dark:text-white text-lg leading-relaxed mb-8">
-              Find answers to the most commonly asked questions about our
-              platform and services.
+              Answers to common questions about our tax-advantaged wealth strategies,
+              downside protection, and planning for business owners and families.
             </p>
 
-            <div className="w-full h-px bg-gradient-to-r from-zinc-300 via-zinc-500 to-zinc-700 dark:from-zinc-800 dark:via-zinc-600 dark:to-zinc-400 my-6"></div>
+            <div className="w-full h-px bg-gradient-to-r from-zinc-300 via-zinc-500 to-zinc-700 dark:from-zinc-800 dark:via-zinc-600 dark:to-zinc-400 my-6" />
 
             <div className="space-y-4 text-lg">
               <div>
-                <span className="font-semibold text-[#f4a950]">Support:</span>
-                <a
-                  href="mailto:support@company.com"
-                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
-                >
-                  support@company.com
+                <span className="font-semibold text-[#f4a950]">General:</span>
+                <a href="mailto:info@mazcollc.com" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                  info@mazcollc.com
                 </a>
               </div>
               <div>
-                <span className="font-semibold text-[#f4a950]">Sales:</span>
-                <a
-                  href="mailto:sales@company.com"
-                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
-                >
-                  sales@company.com
+                <span className="font-semibold text-[#f4a950]">Consultations:</span>
+                <a href="mailto:advisory@mazcollc.com" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                  advisory@mazcollc.com
                 </a>
               </div>
               <div>
-                <span className="font-semibold text-[#f4a950]">
-                  Documentation:
-                </span>
-                <a
-                  href="#"
-                  className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors"
-                >
-                  View Guides
+                <span className="font-semibold text-[#f4a950]">Disclosures:</span>
+                <a href="/disclosures" className="ml-2 text-[#555555] dark:text-white hover:text-[#f4a950] transition-colors">
+                  View policies &amp; disclosures
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Side - FAQs (70-75%) */}
+          {/* Right panel */}
           <div className="lg:w-3/4">
             <div className="space-y-6">
               {items.map((item, i) => (
@@ -192,24 +157,21 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
                   index={i}
                   open={openIndex === i}
                   onToggle={toggle}
+                  baseId={baseId}
                 />
               ))}
             </div>
 
-            {/* Still have questions section */}
+            {/* CTA */}
             <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
-              <h3 className="text-xl font-semibold text-[#f4a950] mb-2">
-                Still have questions?
-              </h3>
+              <h3 className="text-xl font-semibold text-[#f4a950] mb-2">Still have questions?</h3>
               <p className="text-[#555555] dark:text-white mb-4">
-                Cant find the answer you are looking for? Our support team is
-                here to help.
+                Let’s review your goals and determine whether FIAs, Family Banking, or comprehensive planning fits best.
               </p>
-              <BorderButton
-                text="Contact Support"
-                variant="filled"
-                onClick={() => alert("Filled Clicked!")}
-              />
+              <BorderButton text="Talk to an Advisor" variant="filled" />
+              <p className="mt-3 text-xs text-[#6b7280] dark:text-gray-400">
+                Mazco LLC does not provide tax or legal advice. Please consult your tax or legal advisor.
+              </p>
             </div>
           </div>
         </div>

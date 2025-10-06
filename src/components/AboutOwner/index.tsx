@@ -33,7 +33,7 @@ const App = () => {
                 </div>
             <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-8 md:p-16 sm:rounded-tl-0 sm:rounded-tr-none sm:rounded-bl-none rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
               <blockquote className="relative z-10 text-md md:text-2xl font-medium text-[#333333] pb-34 dark:text-white leading-snug">
-                Mode is incredibly valuable as a full stack, full-service platform from a data analyst all the way to an end user. Analysts can go deep, end users get the data they need, and our team gets to make everyone a part of the data strategy.
+                My name is Alain Mazaira and I have been licensed in the field of Financial Services since early 2019. I help my clients with retirement planning, estate planning, asset protection, infinite banking, and other areas of financial planning. I oversee a team of licensed agents. Our mission is to help as many families and individuals as possible. Retirement and financial well‑being shouldn’t be a luxury—it should be attainable for everyone.
               </blockquote>
             </div>
             <div className="flex">
@@ -59,9 +59,9 @@ const App = () => {
                 </div>
               </div>
               <div className="flex flex-col bg-[#f4f4f4]  dark:bg-[#0f131b] w-full rounded-bl-lg rounded-br-lg  border-t-0 p-6">
-                <span className="text-lg text-[#f3a84f] font-semibold dark:text-white">Alex S.</span>
+                <span className="text-lg text-[#f3a84f] font-semibold dark:text-white">Alain Mazaira </span>
                 <span className="text-sm font-medium text-[#555555] dark:text-white">
-                  Business Intelligence Manager
+                  Financial Services Manager
                 </span>
                 <div className="mt-8 flex flex-col md:flex-row md:items-center justify-end space-y-4 md:space-y-0 items-end">
                       <BorderButton text="Read the full review" variant="filled" onClick={() => alert("Filled Clicked!")} />

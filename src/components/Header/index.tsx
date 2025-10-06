@@ -162,7 +162,7 @@ export default function Header() {
     <div className="relative">
       <header
         className={cx(
-          "fixed container top-0 left-1/2 -translate-x-1/2 z-50 w-full",
+          "fixed container width-full top-0 left-1/2 -translate-x-1/2 z-50 w-full",
           "px-3 sm:px-4 py-4 bg-white dark:bg-[#0f131b]",
           megaOpen || mobileOpen ? "rounded-b-none" : "rounded-b-2xl",
           "shadow-sm"
@@ -207,8 +207,10 @@ export default function Header() {
                   />
                 </button>
 
-                <ActiveLink href="/aboutus">ABOUT US</ActiveLink>
-                <ActiveLink href="/contactus">CONTACT US</ActiveLink>
+                <ActiveLink href="/about">ABOUT</ActiveLink>
+                <ActiveLink href="/#">WHY IT MATTERS </ActiveLink>
+                 <ActiveLink href="/#">GRIPP </ActiveLink>
+                <ActiveLink href="/contact">CONTACT</ActiveLink>
               </nav>
             <div className="hidden md:flex items-center gap-4">
               <ThemeToggle />
@@ -410,14 +412,14 @@ export default function Header() {
 
               <ActiveLink
                 mobile
-                href="/aboutus"
+                href="/about"
                 onClick={() => setMobileOpen(false)}
               >
                 About Us
               </ActiveLink>
               <ActiveLink
                 mobile
-                href="/contactus"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact Us

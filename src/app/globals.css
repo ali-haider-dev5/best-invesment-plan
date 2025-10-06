@@ -164,6 +164,11 @@ body{
 .inner-none .p-6:not(.px-0) {
   display: none;
 }
+@media (min-width: 2000px) {
+  .width-full{
+    max-width: 100%!important;
+  }
+}
 
 
 

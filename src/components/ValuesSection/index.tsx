@@ -11,50 +11,50 @@ type ValueItem = {
 const VALUES: ValueItem[] = [
   {
     icon: <Gem className="h-9 w-9 text-[#f3a84f]" />,
-    title: "Character",
+    title: "Integrity",
     text:
-      "Our actions are rooted in respect and honesty. We make time for others and constantly seek what is best for the client.",
+      "Advice first—always. We operate with transparency and fiduciary care so recommendations align with your goals, risk tolerance, and family values.",
   },
   {
     icon: <Flame className="h-9 w-9 text-[#f3a84f]" />,
-    title: "Passion",
+    title: "Client Advocacy",
     text:
-      "We're driven to create results with a can-do philosophy that inspires those around us. Whatever task we start, we see it through until it's completed.",
+      "We own outcomes. From plan design to implementation, we push projects forward and communicate clearly so you can decide with confidence.",
   },
   {
     icon: <UsersRound className="h-9 w-9 text-[#f3a84f]" />,
-    title: "Teamwork",
+    title: "Coordination",
     text:
-      "We move quickly with purpose. Our teams continually strive to achieve excellency and work together to better each other.",
+      "Your plan works best when everyone’s aligned. We collaborate with your CPA and attorney to help execute tax-aware, legally sound strategies.",
   },
   {
     icon: <Leaf className="h-9 w-9 text-[#f3a84f]" />,
-    title: "Growth",
+    title: "Continuous Improvement",
     text:
-      "We foster an environment that encourages growth—professionally and personally. We believe in hard work, self-improvement, and leading by example.",
+      "Markets and lives change. We review, measure, and refine—protecting downside, improving income durability, and adjusting for what’s next.",
   },
 ];
 
 export default function ValuesSection() {
   return (
     <section className="dark:bg-[#192131] bg-white">
-      <div className="container  mx-auto py-16 px-4  border-x-0 border-b-0 text-[#333333] ">
+      <div className="container mx-auto py-16 px-4 border-x-0 border-b-0 text-[#333333]">
         {/* Eyebrow */}
-        <p className="mb-3 text-sm tracking-[0.2em] ">
-          WHAT DRIVES AND DEFINES US
+        <p className="mb-3 text-sm tracking-[0.2em]">
+          WHAT GUIDES OUR PRACTICE
         </p>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl text-[#f3a84f] md:text-5xl font-semibold  dark:text-white">
+        <h2 className="text-3xl sm:text-4xl text-[#f3a84f] md:text-5xl font-semibold dark:text-white">
           Our Values
         </h2>
 
         {/* Intro */}
         <p className="mt-6 max-w-4xl text-lg leading-8 text-[#555555] dark:text-white/80">
-          No matter what stage of your financial journey, you’ll be partnering with
-          professionals who embody our core values. These values define our work and
-          empower our decision-making to provide an elevated client experience and culture
-          unlike anywhere else.
+          We combine protection-first planning, disciplined implementation, and
+          clear accountability. These values shape every recommendation—from
+          Fixed Indexed Annuities and Family Banking to coordinated retirement,
+          estate, and post-liquidity strategies.
         </p>
 
         {/* Cards */}
@@ -62,15 +62,11 @@ export default function ValuesSection() {
           {VALUES.map((v, i) => (
             <article
               key={v.title}
-              className=" bg-neutral-100/60 dark:bg-[#0f131b] px-6 py-8
-                          cursor-pointer transition-shadow "
+              className="bg-neutral-100/60 dark:bg-[#0f131b] px-6 py-8 cursor-pointer transition-shadow"
               style={{ animation: "fadeUp .6s ease both", animationDelay: `${i * 120}ms` }}
             >
               <div className="flex items-center gap-4">
-                {/* Icon in a subtle ring to match the reference */}
-                {/* <span className="inline-grid place-items-center h-16 w-16 rounded-full ring-1 ring-[#f3a84f]/40 bg-white dark:bg-transparent"> */}
-                  {v.icon}
-                {/* </span> */}
+                {v.icon}
                 <h3 className="text-xl font-semibold text-[#f3a84f] dark:text-[#f3a84f]">
                   {v.title}
                 </h3>
@@ -83,6 +79,6 @@ export default function ValuesSection() {
           ))}
         </div>
       </div>
-      </section>
+    </section>
   );
 }

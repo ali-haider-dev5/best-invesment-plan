@@ -11,10 +11,10 @@ type Feature = {
 };
 
 const features: Feature[] = [
-  { icon: Cpu,         title: "Performance",    description: "Ultra-fast data processing in every situation." },
-  { icon: ShieldCheck, title: "Security",       description: "Advanced protection for complete peace of mind and  Responsiveness" },
-  { icon: Layers,      title: "Modularity",     description: "Easy integration with existing architecture and Mind" },
-  { icon: Zap,         title: "Responsiveness", description: "Instant response to every command and performance" },
+  { icon: Cpu,         title: "Indexed",    description: "Indexed growth with downside protection" },
+  { icon: ShieldCheck, title: "Icome",       description: "Pension‑like income strategies" },
+  { icon: Layers,      title: "Legacy",     description: "Legacy & estate planning coordination" },
+  { icon: Zap,         title: "Business", description: "Business owner solutions" },
 ];
 
 const HeroSection = () => {
@@ -32,18 +32,17 @@ const HeroSection = () => {
 
           <div className="space-y-6 flex items-center justify-center flex-col">
             <h1 className="text-3xl md:text-6xl font-extrabold tracking-wider max-w-3xl">
-              Discover minimalism and
+             Protect, Grow, and Enjoy Your Wealth
             </h1>
             <h1 className="text-3xl md:text-6xl text-[#f3a84f] font-extrabold tracking-wider max-w-3xl">
-              power in one place
+              With Confidence
             </h1>
             <p className="text-lg text-white/90 max-w-2xl">
-              Designed with aesthetics and performance in mind. Experience
-              ultra-fast processing, advanced security, and intuitive design.
+             We design tax-advantaged strategies for retirement, legacy, and income so your money works harder—without taking on unnecessary risk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-                  <BorderButton text="Get Started"  onClick={() => alert("Filled Clicked!")} />
-                      <BorderButton text="Learn More" variant="outlined" outlinedColor="#fff" onClick={() => alert("Filled Clicked!")} />
+              <BorderButton text="Explore Services"       onClick={() => console.log("clicked")} />
+              <BorderButton text="Meet Us" variant="outlined" outlinedColor="#fff"       onClick={() => console.log("asdas")} />
 
             </div>
           </div>

@@ -3,7 +3,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import BorderButton from '@/components/BorderButton'
+import BorderButton from "@/components/BorderButton";
 
 export default function HeroChecklist() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,7 +11,6 @@ export default function HeroChecklist() {
 
   const handlePlay = () => {
     setIsPlaying(true);
-    // Wait next paint so the <video> exists, then play.
     requestAnimationFrame(() => {
       videoRef.current?.play().catch(() => {});
     });
@@ -22,16 +21,20 @@ export default function HeroChecklist() {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-2 lg:gap-14 lg:px-8">
         {/* Left: Copy */}
         <div className="text-center md:text-left">
-          <h1 className="text-3xl font-semibold  text-[#f3a84f] leading-tight sm:text-4xl lg:text-5xl">
-            10-Point Checklist for <br />
-            Selling Your Business
+          <h1 className="text-3xl font-semibold text-[#f3a84f] leading-tight sm:text-4xl lg:text-5xl">
+            Founder’s 10-Point Exit Checklist
           </h1>
           <p className="mt-6 text-lg/7 text-[#555555] dark:text-white">
-            CEO Founders and Business Owners
+            For CEO founders and business owners planning a sale — practical steps to
+            maximize valuation, reduce taxes, and keep momentum.
           </p>
 
           <div className="mt-10">
-                <BorderButton text="Request 10-Point Checklist" variant="filled" onClick={() => alert("Filled Clicked!")} />
+            <BorderButton
+              text="Get the 10-Point Checklist"
+              variant="filled"
+              onClick={() => alert("Request submitted")}
+            />
           </div>
         </div>
 
@@ -49,17 +52,17 @@ export default function HeroChecklist() {
                   className="object-cover"
                 />
 
-                {/* Caption (optional) */}
+                {/* Caption */}
                 <div className="absolute bottom-3 left-4 right-4 text-left">
                   <p className="text-sm/5 text-white/90">
-                    Eric Becker — Founder &amp; Co-Chairman, Cresset
+                    Alain Mazaira — Founder, Mazco LLC
                   </p>
                 </div>
 
                 {/* Play button */}
                 <button
                   onClick={handlePlay}
-                  className="absolute inset-0 bg-white cursor-pointer m-auto h-16 w-16 rounded-full  text-sky-900 shadow-lg transition"
+                  className="absolute inset-0 bg-white cursor-pointer m-auto h-16 w-16 rounded-full text-sky-900 shadow-lg transition"
                   aria-label="Play video"
                   title="Play video"
                   style={{ height: 64, width: 64 }}

@@ -27,46 +27,46 @@ interface Gallery6Props {
 }
 
 const Gallery6 = ({
-  items = [
+ items = [
     {
       id: "item-1",
-      title: "Build Modern UIs",
+      title: "Indexed Growth with Downside Protection",
       summary:
-        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
-      url: "#",
-      image: "/testimonial.webp",
+        "Use Fixed Indexed Annuities to participate in market-linked gains (to caps/participation) while protecting principal from market losses.",
+      url: "/services/indexed-growth",
+      image: "https://picsum.photos/seed/finance-chart/1200/800",
     },
     {
       id: "item-2",
-      title: "Computer Vision Technology",
+      title: "Pension-Like Income for Retirement",
       summary:
-        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
-      url: "#",
-      image: "/testimonial.webp",
+        "Turn savings into reliable lifetime income with optional riders designed to reduce sequence-of-returns risk in retirement.",
+      url: "/services/retirement-income",
+      image: "https://picsum.photos/seed/retirement-couple/1200/800",
     },
     {
       id: "item-3",
-      title: "Machine Learning Automation",
+      title: "Family (Infinite) Banking Liquidity",
       summary:
-        "Self-improving algorithms that learn from data patterns to automate complex tasks and make intelligent decisions with minimal human intervention.",
-      url: "#",
-      image: "/testimonial.webp",
+        "Create your private reserve for opportunity funding, cash-flow management, and multi-generational planning using properly structured policies.",
+      url: "/services/family-banking",
+      image: "https://picsum.photos/seed/family-banking/1200/800",
     },
     {
       id: "item-4",
-      title: "Predictive Analytics",
+      title: "Business Owner Exit Planning",
       summary:
-        "Advanced forecasting capabilities that analyze historical data to predict future trends and outcomes, helping businesses make data-driven decisions.",
-      url: "#",
-      image: "/testimonial.webp",
+        "Pre- and post-liquidity planning: income replacement, tax-aware allocation, and asset protection to keep more of your proceeds working for you.",
+      url: "/services/owner-exits",
+      image: "https://picsum.photos/seed/business-meeting/1200/800",
     },
     {
       id: "item-5",
-      title: "Neural Network Architecture",
+      title: "Legacy & Estate Coordination",
       summary:
-        "Sophisticated AI models inspired by human brain structure, capable of solving complex problems through deep learning and pattern recognition.",
-      url: "#",
-      image: "/testimonial.webp",
+        "Coordinate with legal and tax advisors to help pass more to heirs and align beneficiary designations with your overall plan.",
+      url: "/services/legacy",
+      image: "https://picsum.photos/seed/estate-planning/1200/800",
     },
   ],
 }: Gallery6Props) => {
@@ -187,7 +187,7 @@ const Gallery6 = ({
                           className={[
                             "mb-2 pt-2 text-sm md:text-lg  sm:text-xl lg:text-2xl font-medium",
                             isLeftMost
-                              ? "text-[#f5a84b] dark:text-white"
+                              ? "text-[#555555] dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
