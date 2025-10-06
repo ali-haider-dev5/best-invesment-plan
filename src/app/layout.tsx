@@ -1,44 +1,39 @@
 'use client';
 
-import { useEffect, useState } from "react";
-import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/Header/index"
-import ContactUsSection from "@/components/NewContactUsPage/index";
-import Footer from '@/components/Footer/index'
-import "./globals.css";
+import { ReactNode } from 'react';
+import { IBM_Plex_Sans } from 'next/font/google';
+import { ThemeProvider } from '@/components/theme-provider';
+import Header from '@/components/Header';
+import ContactUsSection from '@/components/NewContactUsPage';
+import Footer from '@/components/Footer';
+import './globals.css';
 
+export const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-ibm-plex-sans',
+});
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // This will prevent the "dark" class from being added on SSR
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    );
-  }
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+        {/* If you want Lato in addition to IBM Plex Sans */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body>
+      {/* Put the font variable on body (or html) — but only once */}
+      <body className={ibmPlexSans.variable}>
+        {/* Set defaultTheme here instead of hardcoding "dark" on <html> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main>
-          {children}
-          </main>
+          <main>{children}</main>
           <ContactUsSection />
           <Footer />
         </ThemeProvider>
-
       </body>
     </html>
   );

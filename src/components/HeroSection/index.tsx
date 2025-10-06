@@ -31,10 +31,10 @@ const HeroSection = () => {
         <div className="flex flex-col items-center text-center space-y-8">
 
           <div className="space-y-6 flex items-center justify-center flex-col">
-            <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight max-w-3xl">
+            <h1 className="text-3xl md:text-6xl font-extrabold tracking-wider max-w-3xl">
               Discover minimalism and
             </h1>
-            <h1 className="text-3xl md:text-6xl text-[#f3a84f] font-extrabold tracking-tight max-w-3xl">
+            <h1 className="text-3xl md:text-6xl text-[#f3a84f] font-extrabold tracking-wider max-w-3xl">
               power in one place
             </h1>
             <p className="text-lg text-white/90 max-w-2xl">
