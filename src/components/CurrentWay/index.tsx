@@ -130,7 +130,7 @@ const FeaturesSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
             {featuresData.map((feature) => (
               <div key={feature.id}>
-                <div className="mb-2 text-[#f3a84f]">{feature.icon}</div>
+                {/* <div className="mb-2 text-[#f3a84f]">{feature.icon}</div> */}
                 <h3 className="text-xl text-[#f3a84f] font-bold mb-2">
                   {feature.title}
                 </h3>

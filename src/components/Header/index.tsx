@@ -162,7 +162,7 @@ export default function Header() {
     <div className="relative">
       <header
         className={cx(
-          "fixed container width-full  top-0 left-1/2 -translate-x-1/2 z-50 w-full",
+          "fixed container header-manage width-full  top-0 left-1/2 -translate-x-1/2 z-50 w-full",
           "px-3 sm:px-4 py-4 bg-white dark:bg-[#0f131b]",
           megaOpen || mobileOpen ? "rounded-b-none" : "rounded-b-2xl",
           "shadow-sm"

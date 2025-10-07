@@ -142,7 +142,7 @@ const Gallery6 = ({
         <div className="">
           <Carousel
             setApi={setCarouselApi}
-            className="overflow-hidden relative -mr-[max(2rem,calc((100vw-103rem)/2+5rem))]"
+            className="overflow-hidden relative -mr-[max(2rem,calc((100vw-103rem)/2+3rem))]"
             opts={{
               loop: true,
               align: "start",

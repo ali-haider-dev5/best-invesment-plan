@@ -172,4 +172,15 @@ body{
 }
 
 
+@media (min-width: 1536px) and (max-width: 1560px) {
+  .header-manage {
+    width: 95%;
+  }
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+
 
