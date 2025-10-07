@@ -96,7 +96,7 @@ export default function ContactInfoStagger() {
 
   return (
     <section ref={rootRef} className="py-12 sm:py-16 dark:bg-[#1a2333] bg-white">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto container lg:px-0 sm:px-2 px-4">
         <div className="grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ Icon, title, body }, i) => {
             const delay = i * 300;

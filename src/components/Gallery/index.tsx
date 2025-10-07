@@ -13,7 +13,7 @@ const images = [
 export default function Gallery() {
   return (
     <section className="bg-white dark:bg-[#1a2334] py-12">
-    <div className="mx-auto container p-4">
+    <div className="mx-auto container lg:px-0 sm:px-2 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {images.map((src, i) => (
           <div

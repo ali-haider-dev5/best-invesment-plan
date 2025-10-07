@@ -43,7 +43,7 @@ function ActiveLink({
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        mobile ? "block w-full py-3" : "text-sm md:text-md lg:text-lg",
+        mobile ? "block w-full py-3" : "text-xs md:text-md lg:text-lg",
         "font-semibold uppercase transition-colors",
         isActive
           ? "text-[#f3a84f]"
@@ -162,14 +162,14 @@ export default function Header() {
     <div className="relative">
       <header
         className={cx(
-          "fixed container width-full top-0 left-1/2 -translate-x-1/2 z-50 w-full",
+          "fixed container width-full  top-0 left-1/2 -translate-x-1/2 z-50 w-full",
           "px-3 sm:px-4 py-4 bg-white dark:bg-[#0f131b]",
           megaOpen || mobileOpen ? "rounded-b-none" : "rounded-b-2xl",
           "shadow-sm"
         )}
       >
         <div className="flex items-center justify-between md:block md:items-start md:justify-start">
-          <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center justify-between gap-2 md:gap-3 lg:gap-6">
               <Link href="/" className="inline-flex items-center">
                 <Image
                   src="/mazo-logo.png"
@@ -179,8 +179,8 @@ export default function Header() {
                   className="h-11 w-auto"
                 />
               </Link>
-              <nav className="hidden md:flex items-center gap-4  md:gap-5 lg:gap-8">
-                <ActiveLink href="/">HOME</ActiveLink>
+              <nav className="hidden md:flex items-center gap-3  md:gap-3 lg:gap-4">
+                {/* <ActiveLink href="/">HOME</ActiveLink> */}
 
                 {/* Services trigger */}
                 <button
@@ -339,11 +339,11 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setServicesOpen((s) => !s)}
-                className="flex w-full items-center justify-between py-3 dark:text-white font-semibold uppercase text-[#555555]"
+                className="flex w-full items-center  justify-between py-3 dark:text-white font-semibold uppercase text-[#555555]"
                 aria-expanded={servicesOpen}
                 aria-controls="mobile-services"
               >
-                <ActiveLink href="services">Services</ActiveLink>
+                <ActiveLink href="services" className="text-[16px]">Services</ActiveLink>
                 <ChevronDown
                   className={cn(
                     "h-5 w-5 transition-transform",

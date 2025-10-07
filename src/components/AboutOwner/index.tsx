@@ -7,8 +7,8 @@ const App = () => {
     <div className='dark:bg-[#1a2333]'>
     <div className="container mx-auto py-12">
      
-      <div className=" flex flex-col md:flex-row lg:flex-row p-4 justify-center">
-        <div className="testimonial-container max-w-7xl w-full  md:space-x-8 items-start">
+      <div className=" flex flex-col md:flex-row lg:flex-row justify-center">
+        <div className="testimonial-container container mx-auto lg:px-0 sm:px-2 px-4 w-full  md:space-x-8 items-start">
            <h1 className="text-3xl md:text-4xl lg:text-6xl text-[#f3a84f] text-left mb-12 lg:mb-24 font-bold ">About Mazco</h1>
           <div className='flex gap-4 flex-col lg:flex-row md:flex-row'>
           <div className="relative   rounded-lg flex-1 md:mb-0 mb-8">
@@ -31,8 +31,8 @@ const App = () => {
                     ></path>
                   </svg>
                 </div>
-            <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-8 md:p-16 sm:rounded-tl-0 sm:rounded-tr-none sm:rounded-bl-none rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
-              <blockquote className="relative z-10 text-md md:text-2xl font-medium text-[#333333] pb-34 dark:text-white leading-snug">
+            <div className="bg-[#f4f4f4] dark:bg-[#0f131b] p-4 lg:p-16 md:p-12 sm:rounded-tl-0 sm:rounded-tr-none sm:rounded-bl-none rounded-tl-lg rounded-tr-lg rounded-bl-lg border-b-0 border-r-0">
+              <blockquote className="relative z-10 text-md md:text-2xl font-medium text-[#555555] pb-12 lg:pb-34 dark:text-white leading-snug">
                 My name is Alain Mazaira and I have been licensed in the field of Financial Services since early 2019. I help my clients with retirement planning, estate planning, asset protection, infinite banking, and other areas of financial planning. I oversee a team of licensed agents. Our mission is to help as many families and individuals as possible. Retirement and financial well‑being shouldn’t be a luxury—it should be attainable for everyone.
               </blockquote>
             </div>

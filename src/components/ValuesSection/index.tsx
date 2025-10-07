@@ -38,7 +38,7 @@ const VALUES: ValueItem[] = [
 export default function ValuesSection() {
   return (
     <section className="dark:bg-[#192131] bg-white">
-      <div className="container mx-auto py-16 px-4 border-x-0 border-b-0 text-[#333333]">
+      <div className="container mx-auto py-16 lg:px-0 sm:px-2 px-4 border-x-0 border-b-0 text-[#333333]">
         {/* Eyebrow */}
         <p className="mb-3 text-sm tracking-[0.2em]">
           WHAT GUIDES OUR PRACTICE

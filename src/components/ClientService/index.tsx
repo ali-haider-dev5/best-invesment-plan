@@ -94,15 +94,15 @@ const TestCard = ({ item }: TestCardProps) => (
 );
 
 export default function App() {
-  const topCards = testData.slice(0, 3);
-  const middleCards = testData.slice(3, 10);
+  const topCards = testData.slice(0, 2);
+  const middleCards = testData.slice(2, 6);
 
   return (
     <div
-      className="bg-right bg-contain dark:bg-[#1a2334] bg-no-repeat px-4 p-4 sm:p-8 lg:p-12 font-inter relative"
+      className="bg-right bg-contain dark:bg-[#1a2334] bg-no-repeat font-inter relative"
       style={{ backgroundImage: "url('/service-transparent.png')" }}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto lg:px-0 px-8 py-16">
         <div className="flex flex-col items-center justify-center mb-12 gap-4">
           <div className="flex gap-4">
             <ArrowDownLeft className="h-12 w-12 text-[#f5aa51]" />
@@ -130,7 +130,7 @@ export default function App() {
         {/* Bottom row: 2 cards aligned to the right (cols 3-4 on md+) */}
         <div className="grid grid-cols-1 md:grid-cols-4">
           {/* Estate & Legacy Planning */}
-          <div className="relative bg-white dark:bg-[#0f131b] flex flex-col h-full md:col-start-2">
+          <div className="relative bg-white dark:bg-[#0f131b] flex flex-col h-full md:col-start-3">
             <HairlineChrome />
             <div className="p-8">
               <div className="flex items-center text-gray-700 mb-4">
@@ -164,22 +164,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="relative bg-white dark:bg-[#0f131b] flex flex-col h-full">
-            <HairlineChrome />
-            <div className="p-8">
-              <div className="flex items-center text-gray-700 mb-4">
-                <div className="text-[#f5aa51] w-10 h-10 rounded-lg bg-[#555555]/10 dark:bg-[#f5aa51] flex items-center justify-center mr-3 dark:text-white">
-                  <TrendingUp />
-                </div>
-                <h3 className="text-base font-semibold text-[#f5aa51]">
-                  Mortgage Protection (Term)
-                </h3>
-              </div>
-              <p className="text-sm text-[#555555] dark:text-white leading-relaxed">
-                Safeguard the home with efficient, affordable coverage.
-              </p>
-            </div>
-          </div>
+  
         </div>
         
 

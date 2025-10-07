@@ -28,7 +28,7 @@ const HeroSection = () => {
 
       <div className="w-full relative max-w-6xl space-y-12 z-10">
         {/* Headline + CTA */}
-        <div className="flex flex-col items-center text-center space-y-8">
+        <div className="flex flex-col items-center text-center space-y-8 mt-[88px]">
 
           <div className="space-y-6 flex items-center justify-center flex-col">
             <h1 className="text-3xl md:text-6xl font-extrabold tracking-wider max-w-3xl">

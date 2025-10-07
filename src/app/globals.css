@@ -157,16 +157,17 @@ body{
   }
 }
 
-.px-8 .p-6:not(.px-0) {
+/* .px-8 .p-6:not(.px-0) {
   display: none;
-}
+} */
 
 .inner-none .p-6:not(.px-0) {
   display: none;
 }
-@media (min-width: 2000px) {
-  .width-full{
-    max-width: 100%!important;
+@media (min-width: 1024px) and (max-width: 1085px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

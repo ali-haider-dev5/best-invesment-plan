@@ -7,8 +7,8 @@ export default function Home() {
   const [assets, setAssets] = useState("");
 
   return (
-    <main className="bg-[#f9f8f6] -mb-[100px] grid dark:bg-[#1a2335] py-16 px-4">
-      <section className="container mx-auto flex flex-wrap justify-center gap-6 py-10">
+    <main className="bg-[#f9f8f6] -mb-[100px] grid dark:bg-[#1a2335] py-16 ">
+      <section className="container mx-auto flex flex-wrap justify-center gap-6 py-10 px-8">
         <Image src="/contactForm/logo-1.png" alt="Barron's Advisor" width={120} height={60} />
         <Image src="/contactForm/logo-2.png" alt="Top Firms" width={140} height={60} />
         <Image src="/contactForm/logo-3.png" alt="Best RIAs" width={140} height={60} />
@@ -23,7 +23,7 @@ export default function Home() {
       </h1>
 
       {/* Main Content */}
-      <section className="bg-white dark:bg-[#0b111a] max-w-4xl w-full mx-auto rounded-md flex flex-col md:flex-row overflow-hidden border border-[#f4a950]">
+      <section className="bg-white dark:bg-[#0b111a] max-w-2xl   md:max-w-3xl lg:max-w-4xl   mx-auto rounded-md flex flex-col md:flex-row overflow-hidden border border-[#f4a950] mx-4">
         {/* Left block */}
         <div className="md:w-1/2 p-8 pb-0 flex flex-col justify-between md:border-r md:border-r-[#333333]">
           <div>

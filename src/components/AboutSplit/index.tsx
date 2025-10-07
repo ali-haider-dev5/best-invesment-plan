@@ -59,7 +59,7 @@ export default function AboutSplit({
           </div>
 
           {/* Card */}
-          <div className="relative z-10 max-w-4xl bg-white/80 p-6 shadow-sm backdrop-blur-sm ring-1 ring-black/5 md:-mr-20 lg:-mr-28">
+          <div className="relative z-10 max-w-2xl md:max-w-3xl  lg:max-w-4xl bg-white/80 p-6 shadow-sm backdrop-blur-sm ring-1 ring-black/5 md:-mr-20 lg:-mr-28">
             <h2 className={`text-3xl font-semibold tracking-tight sm:text-4xl ${headingClassName}`}>
               {title}
             </h2>

@@ -122,8 +122,8 @@ const FeaturesSection = () => {
       className="bg-[#f4f4f4] dark:bg-[#0f131b] text-white relative font-sans
              py-16 lg:py-0 lg:min-h-[720px]"
     >
-      <div className="px-4 flex  justify-between h-full gap-10 lg:gap-12">
-        <div className="flex  flex-col justify-center pt-20 pr-0 lg:pr-20 pb-20 pl-[calc(50vw-635px)] ">
+      <div className="lg:px-0 sm:px-2 px-4 container mx-auto flex  justify-between h-full gap-10 lg:gap-12">
+        <div className="flex  flex-col justify-center pt-20 pb-20 ">
           <h2 className="text-4xl lg:text-5xl text-[#f3a84f] font-bold mb-8 leading-tight">
             The Current Way Isn’t Working
           </h2>
@@ -155,8 +155,8 @@ const FeaturesSection = () => {
           <Image
             src="/plans.jpg"
             alt="A person using a phone"
-            width={600}
-            height={400}
+            width={480}
+            height={300}
             priority
           />
         </div>

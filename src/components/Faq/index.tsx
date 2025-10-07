@@ -110,7 +110,7 @@ export default function Faq({ items = DEFAULT_ITEMS }: { items?: FaqItem[] }) {
 
   return (
     <div className="bg-[#f4f4f4] dark:bg-[#1a2334] py-16">
-      <div className="container mx-auto px-4 sm:px-8 md:px-16">
+      <div className="container mx-auto lg:px-0 sm:px-2 px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left panel */}
           <div className="lg:w-1/4 flex flex-col justify-start">

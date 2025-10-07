@@ -88,9 +88,9 @@ export default function App() {
 
   return (
     <div className="bg-[#f4f4f4] dark:bg-[#1a2334] py-32 text-white flex flex-col items-center">
-      <div className="container px-4 w-full flex flex-col lg:flex-row">
+      <div className="container lg:px-0 sm:px-2 px-4 w-full flex flex-col lg:flex-row">
         {/* Left column: copy */}
-        <div className="p-2 md:p-12 lg:w-3/3 flex flex-col">
+        <div className=" lg:w-3/3 flex flex-col">
           <p className="text-[#555555] dark:text-white font-medium">Contact</p>
           <h1 className="text-4xl sm:text-5xl font-semibold mt-2 text-[#f4a950]">
             Get in touch
@@ -100,7 +100,7 @@ export default function App() {
             we’ll route you to the right advisor.
           </p>
           <div className="border-t border-gray-700 my-8"></div>
-          <div className="space-y-4 text-[#555555] text-lg">
+          <div className="space-y-4 text-[#555555] text-lg mb-4">
             <div>
               <span className="font-semibold text-[#f4a950]">General:</span>{" "}
               <a

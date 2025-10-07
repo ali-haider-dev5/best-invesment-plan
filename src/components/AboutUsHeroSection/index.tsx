@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function OurStory() {
   return (
-    <div className="bg-white dark:bg-[#1a2333f0] px-4">
-      <div className="w-full container mx-auto py-32">
+    <div className="bg-white dark:bg-[#1a2333f0]">
+      <div className="w-full container mx-auto py-32 lg:px-0 sm:px-2 px-4">
         <div className="flex flex-col items-center justify-start gap-6 lg:flex-row">
           {/* Left column */}
           <div className="flex w-full flex-col items-start justify-start gap-24 lg:w-1/2">
@@ -93,7 +93,7 @@ export default function OurStory() {
             </div>
 
             {/* Workplace / culture */}
-            <div className="px-2 lg:px-8">
+            <div className="sm:px-2  lg:pl-8">
               <h1 className="mb-8 text-2xl font-semibold text-[#f3a84f] lg:mb-6">
                 Our Workplace
               </h1>

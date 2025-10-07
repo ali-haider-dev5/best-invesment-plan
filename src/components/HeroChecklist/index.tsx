@@ -18,7 +18,7 @@ export default function HeroChecklist() {
 
   return (
     <section className="relative border border-b-[#ccc] overflow-hidden bg-[#f4f4f4] dark:bg-[#0f131b] text-white">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-2 lg:gap-14 lg:px-8">
+      <div className="mx-auto grid container grid-cols-1 items-center gap-10 lg:px-0 px-4 py-16 md:grid-cols-2 lg:gap-14">
         {/* Left: Copy */}
         <div className="text-center md:text-left">
           <h1 className="text-3xl font-semibold text-[#f3a84f] leading-tight sm:text-4xl lg:text-5xl">

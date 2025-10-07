@@ -66,8 +66,8 @@ const Footer = ({
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
-    <section className="py-24 sm:py-28 bg-[#f4f4f4] dark:bg-[#0f131b] px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-24 sm:py-28 bg-[#f4f4f4] dark:bg-[#0f131b]  ">
+      <div className="container mx-auto lg:px-0 sm:px-2 px-4">
         {/* Top: brand + sections */}
         <div className="flex w-full flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           {/* Brand column */}

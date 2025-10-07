@@ -157,7 +157,7 @@ function ServicesTabsSection({ sections, headerOffset = 0, className = "" }: Pro
         className="sticky z-40 bg-white/90 backdrop-blur border-b border-t border-gray-200 dark:bg-[#0b111a]/90"
         style={{ top: headerOffset }}
       >
-        <div className="mx-auto max-w-6xl px-3 sm:px-4">
+        <div className="mx-auto container lg:px-0 sm:px-2   px-4">
           <ul
             className="flex gap-3 sm:gap-8 overflow-x-auto no-scrollbar py-3 sm:py-4 scroll-px-3 sm:scroll-px-4 snap-x snap-mandatory"
             aria-label="Services tabs"
@@ -200,7 +200,7 @@ function ServicesTabsSection({ sections, headerOffset = 0, className = "" }: Pro
       <div className="pt-16 sm:pt-20 pb-20 dark:bg-[#1a2333f0]">
         {sections.map(({ id, title, content }, idx) => (
           <Fragment key={id}>
-            <div id={id} className="mx-auto max-w-6xl px-3 sm:px-4 pt-8 sm:pt-10 md:pt-14" style={{ scrollMarginTop: headerOffset + tabsH + 12 }}>
+            <div id={id} className="mx-auto container lg:px-0 sm:px-4 sm:px-2 px-4 pt-8 sm:pt-10 md:pt-14" style={{ scrollMarginTop: headerOffset + tabsH + 12 }}>
               <h2 className="text-sm sm:text-base text-[#555555] font-bold dark:text-white">{title}</h2>
               <div className="mt-4 sm:mt-6">{content}</div>
             </div>

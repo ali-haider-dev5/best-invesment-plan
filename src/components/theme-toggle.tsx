@@ -35,7 +35,6 @@ export default function ThemeToggle() {
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
       {isDark ? <Sun size={16} /> : <Moon size={16} />}
-      <span className="hidden sm:inline">{isDark ? 'Light' : 'Dark'}</span>
     </button>
   )
 }

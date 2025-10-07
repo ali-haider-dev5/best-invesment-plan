@@ -4,8 +4,8 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight,MoveRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Card } from "@/components/GrippInvesment/card";
-import BorderButton from '@/components/BorderButton'
 import { Button } from "@/components/ui/button";
+import BorderButton from '@/components/BorderButton'
 import {
   Carousel,
   CarouselApi,
@@ -27,46 +27,47 @@ interface Gallery6Props {
 }
 
 const Gallery6 = ({
- items = [
+  heading = "Trusted by product builders",
+  items = [
     {
       id: "item-1",
-      title: "Indexed Growth with Downside Protection",
+      title: "Build Modern UIs",
       summary:
-        "Use Fixed Indexed Annuities to participate in market-linked gains (to caps/participation) while protecting principal from market losses.",
-      url: "/services/indexed-growth",
-      image: "https://picsum.photos/seed/finance-chart/1200/800",
+        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
+      url: "#",
+      image: "/testimonial.webp",
     },
     {
       id: "item-2",
-      title: "Pension-Like Income for Retirement",
+      title: "Computer Vision Technology",
       summary:
-        "Turn savings into reliable lifetime income with optional riders designed to reduce sequence-of-returns risk in retirement.",
-      url: "/services/retirement-income",
-      image: "https://picsum.photos/seed/retirement-couple/1200/800",
+        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
+      url: "#",
+      image: "/testimonial.webp",
     },
     {
       id: "item-3",
-      title: "Family (Infinite) Banking Liquidity",
+      title: "Machine Learning Automation",
       summary:
-        "Create your private reserve for opportunity funding, cash-flow management, and multi-generational planning using properly structured policies.",
-      url: "/services/family-banking",
-      image: "https://picsum.photos/seed/family-banking/1200/800",
+        "Self-improving algorithms that learn from data patterns to automate complex tasks and make intelligent decisions with minimal human intervention.",
+      url: "#",
+      image: "/testimonial.webp",
     },
     {
       id: "item-4",
-      title: "Business Owner Exit Planning",
+      title: "Predictive Analytics",
       summary:
-        "Pre- and post-liquidity planning: income replacement, tax-aware allocation, and asset protection to keep more of your proceeds working for you.",
-      url: "/services/owner-exits",
-      image: "https://picsum.photos/seed/business-meeting/1200/800",
+        "Advanced forecasting capabilities that analyze historical data to predict future trends and outcomes, helping businesses make data-driven decisions.",
+      url: "#",
+      image: "/testimonial.webp",
     },
     {
       id: "item-5",
-      title: "Legacy & Estate Coordination",
+      title: "Neural Network Architecture",
       summary:
-        "Coordinate with legal and tax advisors to help pass more to heirs and align beneficiary designations with your overall plan.",
-      url: "/services/legacy",
-      image: "https://picsum.photos/seed/estate-planning/1200/800",
+        "Sophisticated AI models inspired by human brain structure, capable of solving complex problems through deep learning and pattern recognition.",
+      url: "#",
+      image: "/testimonial.webp",
     },
   ],
 }: Gallery6Props) => {
@@ -116,10 +117,10 @@ const Gallery6 = ({
 
   return (
     <section className="bg-[#f4f4f4] dark:bg-[#0b111a] py-16 sm:py-20 lg:py-28">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto lg:px-0 sm:px-2 px-4">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16 flex items-start flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div>
+            <div>
           <h2 className="text-3xl font-semibold md:text-5xl lg:text-6xl text-[#f3a84f] dark:text-[#f3a84f]">
             Trusted by  
           </h2>
@@ -133,7 +134,7 @@ const Gallery6 = ({
               successful: staying focused, moving quickly, and always aiming for
               high-quality work.
             </p>
-                <BorderButton text="Read our Customer Stories" variant="filled" onClick={() => alert("Filled Clicked!")} />
+           <BorderButton text="Read our Customer Stories" variant="filled" onClick={() => alert("Filled Clicked!")} />
           </div>
         </div>
 
@@ -141,7 +142,7 @@ const Gallery6 = ({
         <div className="">
           <Carousel
             setApi={setCarouselApi}
-            className="overflow-hidden relative -mr-[max(1rem,calc((100vw-103rem)/2+5rem))]  md:-mr-[max(2rem,calc((100vw-103rem)/2+5rem))] lg:-mr-[max(2rem,calc((100vw-128rem)/2+5rem))]"
+            className="overflow-hidden relative -mr-[max(2rem,calc((100vw-103rem)/2+5rem))]"
             opts={{
               loop: true,
               align: "start",
@@ -187,7 +188,7 @@ const Gallery6 = ({
                           className={[
                             "mb-2 pt-2 text-sm md:text-lg  sm:text-xl lg:text-2xl font-medium",
                             isLeftMost
-                              ? "text-[#555555] dark:text-white"
+                              ? "text-[#0f172a] dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
@@ -198,7 +199,7 @@ const Gallery6 = ({
                           className={[
                             "mb-4 text-xs sm:text-base",
                             isLeftMost
-                              ? "text-[#555555] dark:text-white"
+                              ? "text-slate-600 dark:text-white/80"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
@@ -209,7 +210,7 @@ const Gallery6 = ({
                           className={[
                             "inline-flex items-center text-sm sm:text-base",
                             isLeftMost
-                              ? "text-[#555555]/80 dark:text-white"
+                              ? "text-[#0f172a] dark:text-white"
                               : "text-[#f5a84b]",
                           ].join(" ")}
                         >
